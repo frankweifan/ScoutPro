@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ScoutPro · U9-U10 青少年足球球员评估系统</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0c1425;--navy2:#111d33;--navy3:#172340;--navy4:#1e2d52;
+  --gold:#c9a84c;--gold-l:#e8ce7a;--gold-d:#9a7b2e;
+  --wh:#f0f2f5;--wh2:#c8cdd6;--wh3:#8891a0;--wh4:#5c6577;
+  --grn:#3ecf8e;--red:#ef5350;--org:#f7a840;--blu:#4da6ff;--pur:#9b7af7;
+  --bdr:rgba(255,255,255,0.06);--bdr2:rgba(201,168,76,0.18);
+  --r:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px}
+body{font-family:'Noto Sans SC','Outfit',-apple-system,sans-serif;background:var(--navy);color:var(--wh);min-height:100vh;-webkit-font-smoothing:antialiased}
+
+/* LOGIN */
+.ls{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse 80% 60% at 20% 80%,rgba(201,168,76,0.05)0%,transparent 60%),
+  radial-gradient(ellipse 60% 50% at 80% 20%,rgba(77,166,255,0.03)0%,transparent 60%),
+  linear-gradient(180deg,#080d18,#0c1425)}
+.ls::before{content:'';position:absolute;width:320px;height:320px;border:1px solid rgba(201,168,76,0.05);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
+.ls::after{content:'';position:absolute;width:1px;height:100%;background:rgba(201,168,76,0.03);left:50%}
+
+.lc{position:relative;z-index:1;background:linear-gradient(165deg,var(--navy2),var(--navy3));border:1px solid var(--bdr2);border-radius:20px;padding:44px 40px;width:420px;max-width:92vw;box-shadow:0 8px 60px rgba(0,0,0,0.5)}
+.lc-top{text-align:center;margin-bottom:30px}
+.crest{width:72px;height:72px;margin:0 auto 14px;background:linear-gradient(135deg,var(--gold-d),var(--gold),var(--gold-l));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 4px 24px rgba(201,168,76,0.3);position:relative}
+.crest::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(201,168,76,0.25)}
+.lc-top h1{font-family:Outfit;font-size:28px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.lc-top p{font-size:11px;color:var(--wh3);letter-spacing:4px;text-transform:uppercase;margin-top:3px}
+
+.rsel{display:flex;gap:10px;margin-bottom:22px}
+.rb{flex:1;padding:14px 8px;border:1.5px solid var(--bdr);border-radius:12px;background:transparent;color:var(--wh3);cursor:pointer;text-align:center;transition:.25s}
+.rb:hover{border-color:var(--gold-d);color:var(--wh2)}
+.rb.act{border-color:var(--gold);background:rgba(201,168,76,0.06);color:var(--gold)}
+.rb .ri{font-size:22px;display:block;margin-bottom:4px}
+.rb .rl{font-size:12px;font-weight:600}
+
+.li{width:100%;padding:12px 14px;border:1.5px solid var(--bdr);border-radius:10px;background:rgba(255,255,255,0.03);color:var(--wh);font-size:13px;margin-bottom:10px;font-family:inherit;outline:0;transition:.2s}
+.li:focus{border-color:var(--gold)}
+.li::placeholder{color:var(--wh4)}
+.lb{width:100%;padding:13px;border:0;border-radius:10px;background:linear-gradient(135deg,var(--gold-d),var(--gold));color:var(--navy);font-size:13px;font-weight:700;cursor:pointer;margin-top:6px;font-family:inherit;letter-spacing:1px;transition:.3s}
+.lb:hover{box-shadow:0 6px 30px rgba(201,168,76,0.3);transform:translateY(-1px)}
+
+/* APP SHELL */
+.app{display:none}
+.tb{background:linear-gradient(180deg,var(--navy2),var(--navy));border-bottom:1px solid var(--bdr2);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+.tb-l{display:flex;align-items:center;gap:12px}
+.tb-brand{font-family:Outfit;font-weight:800;font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.tb-div{width:1px;height:18px;background:var(--bdr)}
+.tb-role{font-size:10px;font-weight:600;color:var(--gold-d);background:rgba(201,168,76,0.08);padding:3px 8px;border-radius:4px;letter-spacing:1px;text-transform:uppercase}
+.tb-r{display:flex;align-items:center;gap:10px}
+.tb-user{font-size:11px;color:var(--wh3)}
+.tb-out{font-size:10px;color:var(--wh4);background:0;border:1px solid var(--bdr);padding:4px 10px;border-radius:5px;cursor:pointer;font-family:inherit;transition:.2s}
+.tb-out:hover{color:var(--red);border-color:rgba(239,83,80,0.3)}
+
+.tabs{display:flex;gap:0;background:var(--navy2);border-bottom:1px solid var(--bdr);padding:0 24px;overflow-x:auto}
+.tab{padding:12px 18px;font-size:12px;font-weight:600;color:var(--wh4);background:0;border:0;border-bottom:2px solid transparent;cursor:pointer;font-family:inherit;white-space:nowrap;transition:.2s}
+.tab:hover{color:var(--wh2)}
+.tab.act{color:var(--gold);border-bottom-color:var(--gold)}
+
+.mn{padding:22px 24px;max-width:940px;margin:0 auto}
+
+/* Section headers */
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.sn{width:26px;height:26px;background:linear-gradient(135deg,var(--gold-d),var(--gold));color:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;font-family:Outfit;flex-shrink:0}
+.st{font-size:15px;font-weight:700}
+.se{font-size:10px;color:var(--wh4);font-weight:400;margin-left:6px;text-transform:uppercase;letter-spacing:1px}
+
+/* Info grid */
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
+.fg label{display:block;font-size:10px;color:var(--wh4);margin-bottom:3px;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.fg input,.fg select{width:100%;padding:9px 11px;background:rgba(255,255,255,0.03);border:1.5px solid var(--bdr);border-radius:8px;color:var(--wh);font-size:12px;font-family:inherit;outline:0;transition:.2s}
+.fg input:focus,.fg select:focus{border-color:var(--gold)}
+.fg select option{background:var(--navy2);color:var(--wh)}
+
+/* Legend */
+.leg{display:flex;gap:14px;justify-content:center;margin-bottom:18px;flex-wrap:wrap}
+.leg span{font-size:10px;color:var(--wh4);display:flex;align-items:center;gap:4px}
+.leg .d{width:7px;height:7px;border-radius:50%}
+
+/* Eval cards */
+.ec{background:linear-gradient(165deg,var(--navy2),var(--navy3));border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:14px;overflow:hidden;transition:border-color .3s}
+.ec:hover{border-color:var(--bdr2)}
+.eh{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
+.ehl{display:flex;align-items:center;gap:10px}
+.ei-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ei-nm{font-size:13px;font-weight:700}
+.ei-en{font-size:9px;color:var(--wh4);display:block;margin-top:1px;letter-spacing:.5px}
+.ei-sc{font-family:Outfit;font-size:18px;font-weight:800;color:var(--gold);min-width:44px;text-align:right}
+.eb{padding:2px 18px 18px}
+.eb.coll{display:none}
+
+.eit{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.025)}
+.eit:last-child{border-bottom:0}
+.eit-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.eit-lb{font-size:12px;font-weight:600}
+.eit-d{font-size:10px;color:var(--wh4);margin-top:2px;line-height:1.5}
+
+.pills{display:flex;gap:4px;flex-shrink:0}
+.p{width:34px;height:30px;border-radius:7px;border:1.5px solid var(--bdr);background:0;color:var(--wh4);font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:Outfit;transition:.15s}
+.p:hover{border-color:var(--wh3);color:var(--wh2)}
+.p.a.p1{background:rgba(239,83,80,0.12);border-color:var(--red);color:var(--red)}
+.p.a.p2{background:rgba(247,168,64,0.12);border-color:var(--org);color:var(--org)}
+.p.a.p3{background:rgba(77,166,255,0.12);border-color:var(--blu);color:var(--blu)}
+.p.a.p4{background:rgba(62,207,142,0.10);border-color:var(--grn);color:var(--grn)}
+.p.a.p5{background:rgba(201,168,76,0.12);border-color:var(--gold);color:var(--gold)}
+
+/* Textarea */
+.tg{margin-bottom:12px}
+.tg label{display:block;font-size:11px;font-weight:600;margin-bottom:5px;color:var(--wh2)}
+.tg textarea{width:100%;min-height:64px;padding:9px 11px;background:rgba(255,255,255,0.03);border:1.5px solid var(--bdr);border-radius:8px;color:var(--wh);font-size:12px;font-family:inherit;outline:0;resize:vertical;line-height:1.6;transition:.2s}
+.tg textarea:focus{border-color:var(--gold)}
+
+/* Buttons */
+.bg{padding:12px 28px;border:0;border-radius:10px;background:linear-gradient(135deg,var(--gold-d),var(--gold));color:var(--navy);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.5px;transition:.3s}
+.bg:hover{box-shadow:0 4px 24px rgba(201,168,76,0.3);transform:translateY(-1px)}
+.bo{padding:12px 28px;border:1.5px solid var(--bdr);border-radius:10px;background:0;color:var(--wh2);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s}
+.bo:hover{border-color:var(--gold-d);color:var(--gold)}
+.br{display:flex;gap:8px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+
+/* Results */
+.res{display:none}
+.hcards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.hc{background:linear-gradient(165deg,var(--navy2),var(--navy3));border:1px solid var(--bdr);border-radius:var(--r);padding:18px;text-align:center}
+.hc .l{font-size:9px;color:var(--wh4);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.hc .v{font-family:Outfit;font-size:26px;font-weight:800}
+.hc .s{font-size:9px;color:var(--wh4);margin-top:3px}
+
+.pnl{background:linear-gradient(165deg,var(--navy2),var(--navy3));border:1px solid var(--bdr);border-radius:var(--r);padding:20px;margin-bottom:14px}
+.pt{font-size:12px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.pt .ac{color:var(--gold)}
+
+.db{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.db-l{width:100px;font-size:11px;font-weight:600;text-align:right;flex-shrink:0}
+.db-t{flex:1;height:20px;background:rgba(255,255,255,0.04);border-radius:5px;overflow:hidden}
+.db-f{height:100%;border-radius:5px;transition:width .8s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;padding-left:7px;font-size:9px;font-weight:700;color:var(--navy)}
+.db-v{font-family:Outfit;font-size:13px;font-weight:700;width:32px;text-align:center}
+
+.rw{max-width:360px;margin:0 auto}
+
+.ptags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.ptag{padding:4px 10px;border-radius:5px;font-size:10px;font-weight:600}
+.ptag-h{background:rgba(62,207,142,0.10);color:var(--grn)}
+.ptag-m{background:rgba(201,168,76,0.10);color:var(--gold)}
+
+.sl,.dl{list-style:none}
+.sl li,.dl li{padding:5px 0;font-size:11px;color:var(--wh2);display:flex;align-items:start;gap:5px;line-height:1.5}
+.sl li::before{content:'⚡';flex-shrink:0}
+.dl li::before{content:'🎯';flex-shrink:0}
+
+/* History */
+.ht{width:100%;border-collapse:collapse;font-size:11px}
+.ht th{text-align:left;padding:8px 10px;font-size:9px;font-weight:600;color:var(--wh4);border-bottom:1px solid var(--bdr);letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
+.ht td{padding:10px;border-bottom:1px solid var(--bdr);white-space:nowrap}
+.ht tr:hover td{background:rgba(255,255,255,0.02)}
+.tu{color:var(--grn)}.td{color:var(--red)}.te{color:var(--wh4)}
+.sb{display:inline-block;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:700;font-family:Outfit}
+.sb1{background:rgba(239,83,80,0.12);color:var(--red)}
+.sb2{background:rgba(247,168,64,0.12);color:var(--org)}
+.sb3{background:rgba(77,166,255,0.12);color:var(--blu)}
+.sb4{background:rgba(62,207,142,0.08);color:var(--grn)}
+.sb5{background:rgba(201,168,76,0.12);color:var(--gold)}
+.vb{font-size:9px;color:var(--gold-d);background:0;border:1px solid var(--bdr);padding:3px 8px;border-radius:4px;cursor:pointer;font-family:inherit;transition:.2s}
+.vb:hover{border-color:var(--gold);color:var(--gold)}
+
+.ov{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:999}
+.sp{width:36px;height:36px;border:3px solid var(--navy4);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Auth screens */
+.auth-step{display:none}
+.auth-step.active{display:block}
+.auth-tabs{display:flex;gap:0;margin-bottom:22px;border-radius:8px;overflow:hidden;border:1.5px solid var(--bdr)}
+.auth-tab{flex:1;padding:10px;text-align:center;font-size:12px;font-weight:600;color:var(--wh4);background:transparent;border:0;cursor:pointer;font-family:inherit;transition:.2s}
+.auth-tab.act{background:rgba(201,168,76,0.08);color:var(--gold)}
+.otp-inputs{display:flex;gap:8px;justify-content:center;margin:16px 0}
+.otp-input{width:44px;height:50px;text-align:center;font-size:20px;font-weight:700;font-family:Outfit;background:rgba(255,255,255,0.03);border:1.5px solid var(--bdr);border-radius:10px;color:var(--gold);outline:0;transition:.2s}
+.otp-input:focus{border-color:var(--gold)}
+.auth-msg{font-size:11px;text-align:center;margin-top:10px;min-height:18px}
+.auth-msg.err{color:var(--red)}
+.auth-msg.ok{color:var(--grn)}
+.phone-row{display:flex;gap:8px}
+.phone-row .li{flex:1}
+.phone-prefix{width:70px;flex-shrink:0}
+.resend-btn{background:0;border:0;color:var(--gold-d);font-size:11px;cursor:pointer;font-family:inherit;text-decoration:underline;margin-top:6px}
+.resend-btn:disabled{color:var(--wh4);text-decoration:none;cursor:default}
+.auth-loading{display:inline-block;width:16px;height:16px;border:2px solid var(--navy4);border-top-color:var(--gold);border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
+.player-select{margin-bottom:20px}
+.player-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin-top:10px}
+.player-card{padding:12px;border:1.5px solid var(--bdr);border-radius:10px;cursor:pointer;transition:.2s;background:rgba(255,255,255,0.02)}
+.player-card:hover{border-color:var(--gold-d)}
+.player-card.sel{border-color:var(--gold);background:rgba(201,168,76,0.06)}
+.player-card .pc-name{font-size:13px;font-weight:600}
+.player-card .pc-meta{font-size:10px;color:var(--wh4);margin-top:2px}
+.add-player-btn{padding:12px;border:1.5px dashed var(--bdr);border-radius:10px;cursor:pointer;text-align:center;font-size:12px;color:var(--wh4);transition:.2s}
+.add-player-btn:hover{border-color:var(--gold-d);color:var(--gold)}
+.toast{position:fixed;top:70px;right:20px;padding:12px 20px;border-radius:10px;font-size:12px;font-weight:600;z-index:200;animation:fi .3s ease;transition:opacity .3s}
+.toast-ok{background:rgba(62,207,142,0.15);color:var(--grn);border:1px solid rgba(62,207,142,0.2)}
+.toast-err{background:rgba(239,83,80,0.15);color:var(--red);border:1px solid rgba(239,83,80,0.2)}
+.hid{display:none!important}
+.fade{animation:fi .35s ease}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:1024px){.ig{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  html{font-size:15px}.mn{padding:14px 12px}.tb{padding:0 12px;height:48px}.tabs{padding:0 12px}
+  .ig{grid-template-columns:1fr 1fr;gap:6px}.hcards{grid-template-columns:1fr;gap:8px}
+  .eh{padding:12px 14px}.eb{padding:2px 14px 14px}
+  .eit-top{flex-direction:column;align-items:flex-start;gap:6px}.pills{align-self:flex-end}
+  .pnl{padding:16px}.db-l{width:70px;font-size:10px}.lc{padding:28px 20px}
+  .r2{grid-template-columns:1fr!important}.htw{overflow-x:auto}
+}
+@media(max-width:480px){
+  .ig{grid-template-columns:1fr}
+  .p{width:30px;height:28px;font-size:10px}
+  .tb-brand{font-size:12px}.leg{gap:6px}.leg span{font-size:9px}
+  .tab{padding:10px 12px;font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN / REGISTER -->
+<div class="ls" id="LS">
+  <div class="lc fade">
+    <div class="lc-top">
+      <div class="crest">⚽</div>
+      <h1>ScoutPro</h1>
+      <p>Youth Evaluation</p>
+    </div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab act" onclick="switchAuth('login')">登录</button>
+      <button class="auth-tab" onclick="switchAuth('register')">注册</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="auth-step active" id="authLogin">
+      <input class="li" id="loginUser" placeholder="用户名" autocomplete="username" />
+      <input class="li" id="loginPwd" placeholder="密码" type="password" autocomplete="current-password" />
+      <button class="lb" onclick="doLogin()" id="loginBtn">登 录</button>
+      <div class="auth-msg" id="loginMsg"></div>
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div class="auth-step" id="authRegister">
+      <input class="li" id="regUser" placeholder="用户名 *（登录用）" autocomplete="username" />
+      <input class="li" id="regPwd" placeholder="密码 *（至少6位）" type="password" autocomplete="new-password" />
+      <input class="li" id="regPwd2" placeholder="确认密码 *" type="password" autocomplete="new-password" />
+      <input class="li" id="regName" placeholder="真实姓名 *" />
+      <div class="fg" style="margin-bottom:10px">
+        <label style="display:block;font-size:10px;color:var(--wh4);margin-bottom:3px;font-weight:500;text-transform:uppercase;letter-spacing:.5px">地区</label>
+        <select class="li" id="regRegion" style="margin-bottom:0">
+          <option value="">请选择地区</option>
+          <option value="北京">北京</option><option value="上海">上海</option>
+          <option value="广州">广州</option><option value="深圳">深圳</option>
+          <option value="成都">成都</option><option value="重庆">重庆</option>
+          <option value="杭州">杭州</option><option value="武汉">武汉</option>
+          <option value="南京">南京</option><option value="西安">西安</option>
+          <option value="天津">天津</option><option value="苏州">苏州</option>
+          <option value="长沙">长沙</option><option value="沈阳">沈阳</option>
+          <option value="大连">大连</option><option value="青岛">青岛</option>
+          <option value="厦门">厦门</option><option value="昆明">昆明</option>
+          <option value="郑州">郑州</option><option value="济南">济南</option>
+          <option value="海口">海口</option><option value="贵阳">贵阳</option>
+          <option value="香港">香港</option><option value="澳门">澳门</option>
+          <option value="台北">台北</option>
+          <option value="海外-欧洲">海外-欧洲</option>
+          <option value="海外-北美">海外-北美</option>
+          <option value="海外-东南亚">海外-东南亚</option>
+          <option value="海外-其他">海外-其他</option>
+          <option value="其他">其他</option>
+        </select>
+      </div>
+      <input class="li" id="regPhone" placeholder="手机号" type="tel" />
+      <input class="li" id="regEmail" placeholder="邮箱" type="email" />
+      <div class="rsel">
+        <div class="rb act" data-r="coach" onclick="pickR('coach')"><span class="ri">🏟️</span><span class="rl">教练 / 球探</span></div>
+        <div class="rb" data-r="parent" onclick="pickR('parent')"><span class="ri">👨‍👩‍👦</span><span class="rl">家长</span></div>
+      </div>
+      <button class="lb" onclick="doRegister()" id="regBtn">注 册</button>
+      <div class="auth-msg" id="regMsg"></div>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div class="app" id="APP">
+  <div class="tb">
+    <div class="tb-l"><span class="tb-brand">ScoutPro</span><div class="tb-div"></div><span class="tb-role" id="RT">COACH</span></div>
+    <div class="tb-r"><span class="tb-user" id="UN"></span><button class="tb-out" onclick="logout()">退出</button></div>
+  </div>
+  <div class="tabs">
+    <button class="tab act" onclick="goT('ev',this)">📋 新建评估</button>
+    <button class="tab" onclick="goT('hi',this)">📊 历史记录</button>
+  </div>
+
+  <div class="mn" id="Tev">
+    <div id="FV">
+      <div class="leg">
+        <span><span class="d" style="background:var(--red)"></span>1 极具挑战</span>
+        <span><span class="d" style="background:var(--org)"></span>2 及格</span>
+        <span><span class="d" style="background:var(--blu)"></span>3 良好</span>
+        <span><span class="d" style="background:var(--grn)"></span>4 卓越</span>
+        <span><span class="d" style="background:var(--gold)"></span>5 顶级潜力</span>
+      </div>
+      <div class="sh"><div class="sn">i</div><div class="st">球员基本信息<span class="se">Player Info</span></div></div>
+      <div class="ig">
+        <div class="fg"><label>球员姓名 *</label><input id="pN" placeholder="姓名"/></div>
+        <div class="fg"><label>出生年月</label><input id="pB" type="date"/></div>
+        <div class="fg"><label>评估日期</label><input id="pD" type="date"/></div>
+        <div class="fg"><label>年龄组</label><select id="pA"><option>U9</option><option>U10</option></select></div>
+        <div class="fg"><label>位置</label><select id="pP"><option>多位置轮换</option><option>后场</option><option>中场</option><option>前场</option></select></div>
+        <div class="fg"><label>惯用脚</label><select id="pF"><option>右脚</option><option>左脚</option><option>双脚</option></select></div>
+      </div>
+      <div id="EC"></div>
+      <div class="ec"><div class="eh" style="cursor:default"><div class="ehl"><div class="ei-icon" style="background:rgba(155,122,247,0.10)">🗺️</div><div><div class="ei-nm">多位置适应性记录</div><span class="ei-en">Position Versatility</span></div></div></div>
+        <div class="eb"><div class="tg"><label>后场（防守果断性、出球冷静度）</label><textarea id="xB" placeholder="后场表现..."></textarea></div>
+        <div class="tg"><label>中场（枢纽意识、接球频率）</label><textarea id="xM" placeholder="中场表现..."></textarea></div>
+        <div class="tg"><label>前场（射门本能、1v1突破胆量）</label><textarea id="xF" placeholder="前场表现..."></textarea></div></div>
+      </div>
+      <div class="ec"><div class="eh" style="cursor:default"><div class="ehl"><div class="ei-icon" style="background:rgba(201,168,76,0.10)">✍️</div><div><div class="ei-nm">综合定性分析</div><span class="ei-en">Qualitative Summary</span></div></div></div>
+        <div class="eb"><div class="tg"><label>核心优势 Key Strengths</label><textarea id="qS" placeholder="2-3个闪光点..."></textarea></div>
+        <div class="tg"><label>待开发领域 Areas to Develop</label><textarea id="qD" placeholder="3-6个月专项训练方向..."></textarea></div>
+        <div class="tg"><label>发展建议 Action Plan</label><textarea id="qA" placeholder="推荐方向..."></textarea></div></div>
+      </div>
+      <div class="br"><button class="bg" onclick="submit()">提交评估并生成报告 →</button></div>
+    </div>
+
+    <div class="res" id="RV">
+      <div class="sh"><div class="sn">📊</div><div class="st">评估报告<span class="se" id="rN"></span></div></div>
+      <div class="hcards">
+        <div class="hc"><div class="l">综合总分</div><div class="v" id="rT" style="color:var(--gold)">-</div><div class="s">满分 5.00</div></div>
+        <div class="hc"><div class="l">评估等级</div><div class="v" id="rG" style="color:var(--gold-l)">-</div><div class="s" id="rGD">-</div></div>
+        <div class="hc"><div class="l">评估信息</div><div class="v" id="rDt" style="color:var(--wh);font-size:15px">-</div><div class="s" id="rM">-</div></div>
+      </div>
+      <div class="pnl"><div class="pt"><span class="ac">◆</span>六维能力分布</div><div id="DB"></div><div class="rw"><canvas id="RC"></canvas></div></div>
+      <div class="pnl" id="CP" style="display:none"><div class="pt"><span class="ac">◆</span>与上次评估对比</div><div class="rw"><canvas id="CC"></canvas></div></div>
+      <div class="pnl"><div class="pt"><span class="ac">◆</span>多位置适应性</div><div class="ptags" id="PT"></div><div id="PD" style="font-size:11px;color:var(--wh3);line-height:1.7"></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="r2">
+        <div class="pnl"><div class="pt"><span class="ac">⚡</span>核心优势</div><ul class="sl" id="SL"></ul></div>
+        <div class="pnl"><div class="pt"><span class="ac">🎯</span>待开发领域</div><ul class="dl" id="DL"></ul></div>
+      </div>
+      <div class="pnl"><div class="pt"><span class="ac">📋</span>发展建议</div><p id="AT" style="font-size:11px;color:var(--wh3);line-height:1.7"></p></div>
+      <div class="br">
+        <button class="bg" onclick="genPDF()">📄 导出 PDF 报告</button>
+        <button class="bo" onclick="back()">← 返回编辑</button>
+        <button class="bo" onclick="reset()">+ 新建评估</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mn hid" id="Thi">
+    <div class="sh"><div class="sn">📊</div><div class="st">历史评估记录<span class="se">History</span></div></div>
+    <div class="pnl">
+      <div id="HE" style="text-align:center;padding:28px;color:var(--wh4);font-size:12px">暂无历史评估记录</div>
+      <div class="htw"><table class="ht" id="HT" style="display:none"><thead><tr>
+        <th>球员</th><th>日期</th><th>组</th><th>技术</th><th>认知</th><th>身体</th><th>心理</th><th>社交</th><th>热爱</th><th>总分</th><th>变化</th><th></th>
+      </tr></thead><tbody id="HB"></tbody></table></div>
+    </div>
+  </div>
+</div>
+
+<div class="ov" id="OV"><div style="text-align:center"><div class="sp"></div><p style="margin-top:12px;font-size:11px;color:var(--wh3)" id="ovMsg">正在处理...</p></div></div>
+<div id="toastContainer"></div>
+
+<script>
+// ═══════════════════════════════════════════
+// SUPABASE CONFIG — Replace these with your own values
+// ═══════════════════════════════════════════
+const SUPABASE_URL = 'https://yaftnbmxqsvafpdsxalq.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlhZnRuYm14cXN2YWZwZHN4YWxxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzODAwODUsImV4cCI6MjA4ODk1NjA4NX0.tKI3eVfRE6tfZxcm-Bk2FCVZOJ_SaEXAUlkPNTE0FHs';
+
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ═══════════════════════════════════════════
+// DATA MODEL (same as before)
+// ═══════════════════════════════════════════
+const C=[
+  {id:'tech',nm:'技术能力',en:'Technical',ic:'⚽',bg:'rgba(77,166,255,0.08)',cl:'#4da6ff',
+   it:[
+    {id:'ft',nm:'第一脚触球',d:'接收球后的指向性，是否能把球控制在可控范围，为下一个动作创造空间'},
+    {id:'dr',nm:'带球能力',d:'高速带球的稳定性与控制力，密集区域的身体控制力'},
+    {id:'di',nm:'变向能力',d:'左右变向的节奏、保护球的能力、重心转换'},
+    {id:'ov',nm:'1v1突破',d:'是否敢尝试过人，突破时的节奏变化与创造力'},
+    {id:'sp',nm:'短传精度',d:'5-10米传球的力量控制、准度和时机'},
+    {id:'rc',nm:'接传配合',d:'接应意识，是否主动跑位接球，接球前的观察行为'},
+    {id:'sh',nm:'射门动作',d:'射门技术是否自然，射门本能与决断力'},
+    {id:'wf',nm:'非惯用脚',d:'压力下使用弱势脚的意愿和基础完成度'},
+    {id:'sc',nm:'接球前观察',d:'是否有向后扫描的习惯'},
+    {id:'df',nm:'1v1防守能力',d:'是否掌握防守的要领，灵活运用身体、速度、手部动作等，实现成功的防守，包括延缓对方进攻和抢断'},
+  ]},
+  {id:'tactical',nm:'比赛认知与决策',en:'Tactical & Decision',ic:'🧠',bg:'rgba(155,122,247,0.08)',cl:'#9b7af7',
+   it:[
+    {id:'dq',nm:'决策质量',d:'面对场上情况是否选择最佳方案（该传还是该带）'},
+    {id:'ds',nm:'决策速度',d:'从观察到做出动作的时间差，是否有接球前扫描习惯'},
+    {id:'sa',nm:'空间觉察',d:'无球时的跑位，是否懂得拉开宽度或进入口袋区'},
+    {id:'tr',nm:'攻防转换',d:'失去/获得球权后的第一反应速度与位置重塑意愿'},
+    {id:'ps',nm:'位置感',d:'基本站位是否合理，是否有阵型意识'},
+    {id:'pc',nm:'传球选择',d:'是否能找到队友，是否抬头观察'},
+    {id:'tp',nm:'配合意识',d:'是否愿意传球，与队友的默契程度'},
+    {id:'ob',nm:'观察能力',d:'观察次数、广度、深度'},
+    {id:'an',nm:'预判能力',d:'对对手决策和行为的预判，并作出相应反应'},
+  ]},
+  {id:'physical',nm:'身体素质',en:'Physical',ic:'💪',bg:'rgba(247,168,64,0.08)',cl:'#f7a840',
+   it:[
+    {id:'ag',nm:'灵敏性/平衡',d:'身体协调性（ABC原则），高速变向时的重心控制'},
+    {id:'ex',nm:'爆发力',d:'前5-10米起步速度，动作频率'},
+    {id:'en',nm:'耐力/活力',d:'比赛全过程的跑动参与度与体能恢复能力'},
+    {id:'co',nm:'协调性',d:'跑动姿态是否自然，身体各部位的协同'},
+    {id:'ba',nm:'对抗平衡',d:'对抗中是否容易失去平衡，身体对抗意愿'},
+  ]},
+  {id:'mental',nm:'心理能力',en:'Psychological',ic:'🧘',bg:'rgba(239,83,80,0.08)',cl:'#ef5350',
+   it:[
+    {id:'re',nm:'抗逆力',d:'面对失误或比分落后时的情绪稳定性和反扑欲望'},
+    {id:'cf',nm:'自信心',d:'是否敢于在压力下持球、尝试高难度动作'},
+    {id:'bc',nm:'敢于拿球',d:'在比赛中是否主动要球，被抢断后还敢不敢继续拿球，面对防守是否尝试过人'},
+    {id:'cp',nm:'竞争性/求胜欲',d:'是否积极拼抢，比赛中的斗志与投入度'},
+    {id:'fo',nm:'专注度',d:'比赛中是否容易走神，注意力持续时间'},
+    {id:'ap',nm:'抗压能力',d:'失误后的反应，是否情绪稳定，比赛落后时是否躲球'},
+    {id:'ln',nm:'学习能力',d:'对教练指令的理解力、纠错速度、是否模仿优秀球员、自我反思意识'},
+    {id:'fk',nm:'假动作与创造力',d:'是否能大胆的使用假动作，并作出无法预判的行为'},
+  ]},
+  {id:'social',nm:'社交能力',en:'Social',ic:'🤝',bg:'rgba(62,207,142,0.08)',cl:'#3ecf8e',
+   it:[
+    {id:'cm',nm:'场上沟通',d:'是否有语言或手势提醒队友，表现出初步领导力'},
+    {id:'tw',nm:'团队协作',d:'与队友的互动关系，是否愿意分享球并支持伙伴'},
+    {id:'ec',nm:'鼓励队友',d:'是否在队友失误后给予支持和鼓励'},
+    {id:'cb',nm:'可塑性/受教性',d:'对教练指导的接受度、执行意愿与态度'},
+  ]},
+  {id:'passion',nm:'热爱',en:'Love of the Game',ic:'🔥',bg:'rgba(201,168,76,0.08)',cl:'#c9a84c',
+   it:[
+    {id:'pt',nm:'训练前主动性',d:'训练开始前是否主动踢球、热身'},
+    {id:'rt',nm:'休息时间投入',d:'休息时间是否还在玩球、研究动作'},
+    {id:'tf',nm:'训练专注度',d:'训练中是否全神贯注，不容易分心'},
+    {id:'me',nm:'比赛参与度',d:'比赛中是否积极投入，始终保持高参与'},
+    {id:'lr',nm:'输球后的反应',d:'比赛输球后是否难过，是否渴望再次比赛'},
+    {id:'sd',nm:'自驱力',d:'离开训练场后是否还会继续踢球、看比赛'},
+  ]}
+];
+
+// ═══════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════
+let role='coach', user='', userId=null, S={}, E=[];
+let rI=null, cI=null;
+let authMode='login';
+
+function $(id){return document.getElementById(id)}
+
+// ═══════════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════════
+function toast(msg, type='ok'){
+  const t=document.createElement('div');
+  t.className=`toast toast-${type}`;
+  t.textContent=msg;
+  $('toastContainer').appendChild(t);
+  setTimeout(()=>{t.style.opacity='0';setTimeout(()=>t.remove(),300)},3000);
+}
+
+// ═══════════════════════════════════════════
+// AUTH: Username + Password
+// ═══════════════════════════════════════════
+function switchAuth(mode){
+  authMode=mode;
+  document.querySelectorAll('.auth-tab').forEach(t=>t.classList.remove('act'));
+  document.querySelectorAll('.auth-tab')[mode==='login'?0:1].classList.add('act');
+  $('authLogin').classList.toggle('active',mode==='login');
+  $('authRegister').classList.toggle('active',mode==='register');
+}
+
+function pickR(r){role=r;document.querySelectorAll('.rb').forEach(b=>b.classList.remove('act'));document.querySelector(`[data-r="${r}"]`).classList.add('act')}
+
+// Supabase email auth uses email format; we fake it from username
+function userToEmail(username){return username.toLowerCase().replace(/[^a-z0-9_.-]/g,'')+'@scoutpro.app'}
+
+async function doRegister(){
+  const username=$('regUser').value.trim();
+  const pwd=$('regPwd').value;
+  const pwd2=$('regPwd2').value;
+  const name=$('regName').value.trim();
+  const region=$('regRegion').value;
+  const phone=$('regPhone').value.trim();
+  const email=$('regEmail').value.trim();
+  const msg=$('regMsg');
+
+  if(!username){msg.className='auth-msg err';msg.textContent='请输入用户名';return}
+  if(username.length<3){msg.className='auth-msg err';msg.textContent='用户名至少3个字符';return}
+  if(!pwd||pwd.length<6){msg.className='auth-msg err';msg.textContent='密码至少6位';return}
+  if(pwd!==pwd2){msg.className='auth-msg err';msg.textContent='两次密码不一致';return}
+  if(!name){msg.className='auth-msg err';msg.textContent='请输入真实姓名';return}
+
+  $('regBtn').innerHTML='<span class="auth-loading"></span>注册中...';$('regBtn').disabled=true;
+  try{
+    const fakeEmail=userToEmail(username);
+    const{data,error}=await sb.auth.signUp({
+      email:fakeEmail,
+      password:pwd,
+      options:{
+        data:{username, name, role, region, phone, email, organization:''}
+      }
+    });
+    if(error)throw error;
+    // Supabase might need email confirmation; we disabled it in settings
+    if(data.user){
+      toast('注册成功！');
+      // Auto-login after registration
+      await enterApp();
+    }else{
+      msg.className='auth-msg ok';msg.textContent='注册成功，请登录';
+      switchAuth('login');
+      $('loginUser').value=username;
+    }
+  }catch(err){
+    let m=err.message||'注册失败';
+    if(m.includes('already registered'))m='该用户名已被注册';
+    msg.className='auth-msg err';msg.textContent=m;
+  }
+  $('regBtn').innerHTML='注 册';$('regBtn').disabled=false;
+}
+
+async function doLogin(){
+  const username=$('loginUser').value.trim();
+  const pwd=$('loginPwd').value;
+  const msg=$('loginMsg');
+
+  if(!username){msg.className='auth-msg err';msg.textContent='请输入用户名';return}
+  if(!pwd){msg.className='auth-msg err';msg.textContent='请输入密码';return}
+
+  $('loginBtn').innerHTML='<span class="auth-loading"></span>登录中...';$('loginBtn').disabled=true;
+  try{
+    const fakeEmail=userToEmail(username);
+    const{data,error}=await sb.auth.signInWithPassword({email:fakeEmail,password:pwd});
+    if(error)throw error;
+    toast('登录成功！');
+    await enterApp();
+  }catch(err){
+    let m=err.message||'登录失败';
+    if(m.includes('Invalid login'))m='用户名或密码错误';
+    msg.className='auth-msg err';msg.textContent=m;
+  }
+  $('loginBtn').innerHTML='登 录';$('loginBtn').disabled=false;
+}
+
+// Enter key support
+document.addEventListener('DOMContentLoaded',()=>{
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){
+      if($('LS').style.display!=='none'&&$('LS').style.display!==''){
+        if(authMode==='login')doLogin();else doRegister();
+      }
+    }
+  });
+  checkSession();
+});
+
+// ═══════════════════════════════════════════
+// SESSION
+// ═══════════════════════════════════════════
+async function checkSession(){
+  const{data:{session}}=await sb.auth.getSession();
+  if(session) await enterApp();
+}
+
+async function enterApp(){
+  const{data:{user:u}}=await sb.auth.getUser();
+  if(!u)return;
+  userId=u.id;
+  // Get profile from metadata or profiles table
+  const meta=u.user_metadata||{};
+  const{data:profile}=await sb.from('profiles').select('*').eq('id',userId).maybeSingle();
+  if(profile){
+    user=profile.name;role=profile.role;
+  }else{
+    user=meta.name||meta.username||'用户';
+    role=meta.role||'coach';
+  }
+  $('LS').style.display='none';$('APP').style.display='block';
+  $('RT').textContent=role==='coach'?'COACH / SCOUT':'PARENT';
+  $('UN').textContent=user;
+  $('pD').valueAsDate=new Date();
+  build();
+  await loadHistory();
+}
+
+async function logout(){
+  await sb.auth.signOut();
+  $('LS').style.display='';$('APP').style.display='none';
+  switchAuth('login');
+  E=[];userId=null;user='';
+}
+
+// ═══════════════════════════════════════════
+// TABS
+// ═══════════════════════════════════════════
+async function goT(t,el){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('act'));el.classList.add('act');
+  $('Tev').classList.toggle('hid',t!=='ev');$('Thi').classList.toggle('hid',t!=='hi');
+  if(t==='hi') await loadHistory();
+}
+
+// ═══════════════════════════════════════════
+// BUILD EVAL FORM (same as before)
+// ═══════════════════════════════════════════
+function build(){
+  const c=$('EC');c.innerHTML='';S={};
+  C.forEach((cat,ci)=>{
+    let h='';
+    cat.it.forEach(it=>{
+      S[it.id]=0;
+      h+=`<div class="eit"><div class="eit-top"><div><div class="eit-lb">${it.nm}</div><div class="eit-d">${it.d}</div></div>
+        <div class="pills">${[1,2,3,4,5].map(s=>`<div class="p p${s}" onclick="ss('${it.id}',${s},this)">${s}</div>`).join('')}</div></div></div>`;
+    });
+    c.innerHTML+=`<div class="ec fade" style="animation-delay:${ci*35}ms">
+      <div class="eh" onclick="this.nextElementSibling.classList.toggle('coll')"><div class="ehl"><div class="ei-icon" style="background:${cat.bg}">${cat.ic}</div><div><div class="ei-nm">${cat.nm}</div><span class="ei-en">${cat.en}</span></div></div><div class="ei-sc" id="cs_${cat.id}">—</div></div>
+      <div class="eb">${h}</div></div>`;
+  });
+}
+function ss(id,s,el){S[id]=s;el.parentNode.querySelectorAll('.p').forEach(p=>p.classList.remove('a'));el.classList.add('a');uCS()}
+function uCS(){C.forEach(cat=>{const vs=cat.it.map(i=>S[i.id]).filter(v=>v>0);$(`cs_${cat.id}`).textContent=vs.length?(vs.reduce((a,b)=>a+b,0)/vs.length).toFixed(1):'—'})}
+
+// ═══════════════════════════════════════════
+// SUBMIT — save to Supabase
+// ═══════════════════════════════════════════
+async function submit(){
+  const pn=$('pN').value.trim();
+  if(!pn){alert('请输入球员姓名');return}
+  const un=C.flatMap(c=>c.it).filter(i=>S[i.id]===0);
+  if(un.length>0&&!confirm(`还有 ${un.length} 项未评分，是否继续？`))return;
+
+  $('OV').style.display='flex';$('ovMsg').textContent='正在保存评估...';
+
+  try{
+    // 1. Create or find player
+    const playerName=pn;
+    const ageGroup=$('pA').value;
+    const birth=$('pB').value||null;
+    const pos=$('pP').value;
+    const foot=$('pF').value;
+
+    let playerId;
+    // Check if player already exists (by name + age group, created by this user)
+    const{data:existingPlayers}=await sb.from('players').select('id').eq('name',playerName).eq('age_group',ageGroup).limit(1);
+    if(existingPlayers&&existingPlayers.length>0){
+      playerId=existingPlayers[0].id;
+    }else{
+      const{data:newPlayer,error:pe}=await sb.from('players').insert({
+        name:playerName, birth_date:birth, age_group:ageGroup,
+        preferred_foot:foot, position:pos, created_by:userId
+      }).select('id').single();
+      if(pe)throw pe;
+      playerId=newPlayer.id;
+    }
+
+    // 2. Calculate scores
+    const cs={};
+    C.forEach(cat=>{const vs=cat.it.map(i=>S[i.id]).filter(v=>v>0);cs[cat.id]=vs.length?vs.reduce((a,b)=>a+b,0)/vs.length:0});
+    const total=Object.values(cs).reduce((a,b)=>a+b,0)/6;
+
+    // 3. Insert evaluation
+    const{data:evalData,error:ee}=await sb.from('evaluations').insert({
+      player_id:playerId, evaluator_id:userId,
+      eval_date:$('pD').value||new Date().toISOString().split('T')[0],
+      score_tech:cs.tech, score_tactical:cs.tactical, score_physical:cs.physical,
+      score_mental:cs.mental, score_social:cs.social, score_passion:cs.passion,
+      total_score:total, item_scores:S,
+      pos_back:$('xB').value, pos_mid:$('xM').value, pos_front:$('xF').value,
+      strengths:$('qS').value, dev_areas:$('qD').value, action_plan:$('qA').value
+    }).select('*').single();
+    if(ee)throw ee;
+
+    toast('评估已保存！');
+
+    // Convert to display format
+    const ev={
+      id:evalData.id, pn:playerName, birth:birth,
+      date:evalData.eval_date, age:ageGroup, pos, foot, who:user, role,
+      S:{...S}, cs, total,
+      xB:$('xB').value, xM:$('xM').value, xF:$('xF').value,
+      qS:$('qS').value, qD:$('qD').value, qA:$('qA').value
+    };
+    E.push(ev);
+    show(ev);
+  }catch(err){
+    console.error(err);
+    toast('保存失败: '+(err.message||err),'err');
+  }
+  $('OV').style.display='none';
+}
+
+// ═══════════════════════════════════════════
+// LOAD HISTORY from Supabase
+// ═══════════════════════════════════════════
+async function loadHistory(){
+  try{
+    const{data,error}=await sb.from('evaluations')
+      .select(`*, players(name, age_group, preferred_foot, position)`)
+      .order('eval_date',{ascending:false}).limit(100);
+    if(error)throw error;
+    E=data.map(d=>({
+      id:d.id, pn:d.players?.name||'未知', birth:null,
+      date:d.eval_date, age:d.players?.age_group||'U9',
+      pos:d.players?.position||'', foot:d.players?.preferred_foot||'',
+      who:user, role,
+      S:d.item_scores||{},
+      cs:{tech:+d.score_tech,tactical:+d.score_tactical,physical:+d.score_physical,mental:+d.score_mental,social:+d.score_social,passion:+d.score_passion},
+      total:+d.total_score,
+      xB:d.pos_back||'', xM:d.pos_mid||'', xF:d.pos_front||'',
+      qS:d.strengths||'', qD:d.dev_areas||'', qA:d.action_plan||''
+    }));
+    refH();
+  }catch(err){console.error('Load history error:',err);refH()}
+}
+
+// ═══════════════════════════════════════════
+// RESULTS DISPLAY (same as before)
+// ═══════════════════════════════════════════
+function show(d){
+  $('FV').style.display='none';$('RV').style.display='block';
+  $('rN').textContent=d.pn;$('rT').textContent=d.total.toFixed(2);$('rDt').textContent=d.date;
+  $('rM').textContent=`${d.age} · ${d.pos} · ${d.foot} · ${d.who}`;
+  let g,gd;
+  if(d.total>=4.5){g='S';gd='顶级潜力 · 推荐精英梯队'}
+  else if(d.total>=3.8){g='A';gd='优先培养 · 高潜力球员'}
+  else if(d.total>=3.0){g='B';gd='持续观察 · 具备潜力'}
+  else if(d.total>=2.0){g='C';gd='基础巩固 · 重点提高基础'}
+  else{g='D';gd='极具挑战 · 需更多耐心'}
+  $('rG').textContent=g;$('rGD').textContent=gd;
+
+  const clrs=['#4da6ff','#9b7af7','#f7a840','#ef5350','#3ecf8e','#c9a84c'];
+  const db=$('DB');db.innerHTML='';
+  C.forEach((cat,i)=>{const v=d.cs[cat.id];db.innerHTML+=`<div class="db"><div class="db-l">${cat.ic} ${cat.nm}</div><div class="db-t"><div class="db-f" style="width:${v/5*100}%;background:${clrs[i]}">${v.toFixed(2)}</div></div><div class="db-v" style="color:${clrs[i]}">${v.toFixed(1)}</div></div>`});
+
+  const ctx=$('RC').getContext('2d');if(rI)rI.destroy();
+  rI=new Chart(ctx,{type:'radar',data:{labels:C.map(c=>c.nm),datasets:[{label:d.pn,data:C.map(c=>d.cs[c.id]),backgroundColor:'rgba(201,168,76,0.10)',borderColor:'#c9a84c',borderWidth:2,pointBackgroundColor:'#c9a84c',pointRadius:4}]},
+    options:{responsive:true,scales:{r:{beginAtZero:true,max:5,min:0,ticks:{stepSize:1,color:'#5c6577',backdropColor:'transparent',font:{size:9}},grid:{color:'rgba(255,255,255,0.04)'},angleLines:{color:'rgba(255,255,255,0.04)'},pointLabels:{color:'#c8cdd6',font:{size:10,weight:'600'}}}},plugins:{legend:{display:false}}}});
+
+  const prev=E.filter(e=>e.pn===d.pn&&e.id!==d.id);
+  if(prev.length){$('CP').style.display='';const p=prev[prev.length-1];const cx=$('CC').getContext('2d');if(cI)cI.destroy();
+    cI=new Chart(cx,{type:'radar',data:{labels:C.map(c=>c.nm),datasets:[{label:`本次 (${d.date})`,data:C.map(c=>d.cs[c.id]),backgroundColor:'rgba(201,168,76,0.10)',borderColor:'#c9a84c',borderWidth:2,pointRadius:3},{label:`上次 (${p.date})`,data:C.map(c=>p.cs[c.id]),backgroundColor:'rgba(77,166,255,0.06)',borderColor:'#4da6ff',borderWidth:2,borderDash:[5,5],pointRadius:3}]},
+    options:{responsive:true,scales:{r:{beginAtZero:true,max:5,min:0,ticks:{stepSize:1,color:'#5c6577',backdropColor:'transparent'},grid:{color:'rgba(255,255,255,0.04)'},angleLines:{color:'rgba(255,255,255,0.04)'},pointLabels:{color:'#c8cdd6',font:{size:9,weight:'600'}}}},plugins:{legend:{labels:{color:'#c8cdd6',font:{size:10}}}}}})
+  }else $('CP').style.display='none';
+
+  const pt=$('PT'),pd=$('PD');pt.innerHTML='';pd.innerHTML='';const ps=[];
+  if(d.xB){pt.innerHTML+='<span class="ptag ptag-m">后场</span>';ps.push(`<b>后场：</b>${d.xB}`)}
+  if(d.xM){pt.innerHTML+='<span class="ptag ptag-h">中场</span>';ps.push(`<b>中场：</b>${d.xM}`)}
+  if(d.xF){pt.innerHTML+='<span class="ptag ptag-h">前场</span>';ps.push(`<b>前场：</b>${d.xF}`)}
+  pd.innerHTML=ps.join('<br><br>');
+
+  $('SL').innerHTML=d.qS?d.qS.split(/[,，\n]/).filter(s=>s.trim()).map(s=>`<li>${s.trim()}</li>`).join(''):'<li style="color:var(--wh4)">未填写</li>';
+  $('DL').innerHTML=d.qD?d.qD.split(/[,，\n]/).filter(s=>s.trim()).map(s=>`<li>${s.trim()}</li>`).join(''):'<li style="color:var(--wh4)">未填写</li>';
+  $('AT').textContent=d.qA||'未填写';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function back(){$('FV').style.display='';$('RV').style.display='none'}
+function reset(){back();$('pN').value='';['xB','xM','xF','qS','qD','qA'].forEach(id=>$(id).value='');build();window.scrollTo({top:0,behavior:'smooth'})}
+
+// ═══════════════════════════════════════════
+// HISTORY TABLE
+// ═══════════════════════════════════════════
+function refH(){
+  const tb=$('HB'),tbl=$('HT'),emp=$('HE');
+  if(!E.length){tbl.style.display='none';emp.style.display='';return}
+  tbl.style.display='';emp.style.display='none';tb.innerHTML='';
+  E.forEach(ev=>{
+    const pv=E.filter(e=>e.pn===ev.pn&&e.id!==ev.id&&e.date<ev.date);
+    const p=pv.length?pv[pv.length-1]:null;
+    const df=p?(ev.total-p.total):0;
+    let tc='te',tt='—';if(df>0.05){tc='tu';tt=`↑+${df.toFixed(2)}`}else if(df<-0.05){tc='td';tt=`↓${df.toFixed(2)}`}
+    const cids=['tech','tactical','physical','mental','social','passion'];
+    const cc=cids.map(c=>{const v=ev.cs[c]||0;const s=Math.max(1,Math.min(5,Math.round(v)));return`<td><span class="sb sb${s}">${v.toFixed(1)}</span></td>`}).join('');
+    tb.innerHTML+=`<tr><td style="font-weight:600">${ev.pn}</td><td>${ev.date}</td><td>${ev.age}</td>${cc}<td style="font-weight:700;color:var(--gold)">${ev.total.toFixed(2)}</td><td class="${tc}" style="font-weight:600">${tt}</td><td><button class="vb" onclick="vH('${ev.id}')">查看</button></td></tr>`;
+  });
+}
+function vH(id){const ev=E.find(e=>e.id===id);if(!ev)return;document.querySelectorAll('.tab').forEach(b=>b.classList.remove('act'));document.querySelectorAll('.tab')[0].classList.add('act');$('Tev').classList.remove('hid');$('Thi').classList.add('hid');show(ev)}
+
+// ═══════════════════════════════════════════
+// PDF (2-page, Canvas-based, same as v2)
+// ═══════════════════════════════════════════
+async function genPDF(){
+  const ov=$('OV');ov.style.display='flex';$('ovMsg').textContent='正在生成 PDF...';
+  try{
+    const ev=E.find(e=>$('rN').textContent&&e.pn===$('rN').textContent)||E[E.length-1];
+    if(!ev){ov.style.display='none';return}
+    // A4 Landscape: 842 x 595
+    const W=842,H=595,s=2;
+    const clrs=['#4da6ff','#9b7af7','#f7a840','#ef5350','#3ecf8e','#c9a84c'];
+    const cv=document.createElement('canvas');cv.width=W*s;cv.height=H*s;
+    const cx=cv.getContext('2d');cx.scale(s,s);
+    cx.fillStyle='#0c1425';cx.fillRect(0,0,W,H);
+
+    function rr(x,y,w,h,r){cx.beginPath();cx.moveTo(x+r,y);cx.lineTo(x+w-r,y);cx.quadraticCurveTo(x+w,y,x+w,y+r);cx.lineTo(x+w,y+h-r);cx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);cx.lineTo(x+r,y+h);cx.quadraticCurveTo(x,y+h,x,y+h-r);cx.lineTo(x,y+r);cx.quadraticCurveTo(x,y,x+r,y);cx.closePath()}
+    function wt(txt,mw){const ls=[];let l='';for(const ch of txt){const t=l+ch;if(cx.measureText(t).width>mw&&l){ls.push(l);l=ch}else l=t}if(l)ls.push(l);return ls}
+
+    let grade;if(ev.total>=4.5)grade='S';else if(ev.total>=3.8)grade='A';else if(ev.total>=3.0)grade='B';else if(ev.total>=2.0)grade='C';else grade='D';
+
+    // ── HEADER BAR ──
+    const grd=cx.createLinearGradient(0,0,W,0);grd.addColorStop(0,'#111d33');grd.addColorStop(1,'#172340');
+    cx.fillStyle=grd;cx.fillRect(0,0,W,36);
+    cx.fillStyle='#c9a84c';cx.fillRect(0,35,W,1);
+    cx.font='bold 12px Outfit,sans-serif';cx.fillStyle='#c9a84c';cx.fillText('SCOUTPRO',14,23);
+    cx.font='300 7px Outfit,sans-serif';cx.fillStyle='#8891a0';cx.fillText('U9-U10 YOUTH PLAYER EVALUATION REPORT',100,23);
+    // Player name + meta in header right
+    cx.font='bold 12px "Noto Sans SC",sans-serif';cx.fillStyle='#f0f2f5';cx.textAlign='right';
+    cx.fillText(ev.pn,W-14,18);
+    cx.font='400 7px "Noto Sans SC"';cx.fillStyle='#8891a0';
+    cx.fillText(`${ev.age} · ${ev.pos} · ${ev.foot} · ${ev.date} · ${ev.who}`,W-14,28);
+    cx.textAlign='left';
+
+    // ── LAYOUT: 3 columns ──
+    const M=12, topY=44;
+    const col1W=260, col2W=260, col3W=W-col1W-col2W-M*4;
+    const col1X=M, col2X=col1X+col1W+M, col3X=col2X+col2W+M;
+    const contentH=H-topY-16;
+
+    // ══ COLUMN 1: Total + Radar + 6-dim bars ══
+    let y=topY;
+
+    // Total score box
+    cx.fillStyle='rgba(201,168,76,0.06)';rr(col1X,y,col1W,32,5);cx.fill();
+    cx.font='bold 7px "Noto Sans SC"';cx.fillStyle='#8891a0';cx.fillText('综合总分',col1X+8,y+14);
+    cx.font='bold 20px Outfit';cx.fillStyle='#c9a84c';cx.fillText(ev.total.toFixed(2),col1X+56,y+22);
+    cx.font='bold 14px Outfit';cx.fillStyle=grade==='S'?'#c9a84c':grade==='A'?'#3ecf8e':'#4da6ff';
+    cx.fillText(grade,col1X+110,y+22);
+    // 6-dim mini scores in header
+    const mw=col1W-130;const ms=mw/6;
+    cx.font='bold 8px Outfit';
+    C.forEach((cat,i)=>{cx.fillStyle=clrs[i];cx.fillText(ev.cs[cat.id].toFixed(1),col1X+136+ms*i,y+14)});
+    cx.font='400 5px "Noto Sans SC"';cx.fillStyle='#5c6577';
+    C.forEach((cat,i)=>{cx.fillText(cat.nm.slice(0,2),col1X+136+ms*i,y+22)});
+    y+=38;
+
+    // Radar chart
+    const rc=$('RC');const ri=new Image();ri.src=rc.toDataURL('image/png');await new Promise(r=>{ri.onload=r});
+    const rsz=140;
+    cx.drawImage(ri,col1X+(col1W-rsz)/2,y,rsz,rsz);
+    y+=rsz+6;
+
+    // 6-dim bars
+    cx.font='bold 7px "Noto Sans SC"';cx.fillStyle='#c8cdd6';cx.fillText('六维能力分布',col1X,y+6);y+=12;
+    C.forEach((cat,i)=>{
+      const v=ev.cs[cat.id];
+      cx.font='400 6px "Noto Sans SC"';cx.fillStyle='#8891a0';cx.textAlign='right';cx.fillText(cat.nm,col1X+52,y+7);cx.textAlign='left';
+      cx.fillStyle='rgba(255,255,255,0.03)';rr(col1X+58,y+1,col1W-90,8,2);cx.fill();
+      cx.fillStyle=clrs[i];const fw=Math.max(2,(v/5)*(col1W-90));rr(col1X+58,y+1,fw,8,2);cx.fill();
+      cx.font='bold 8px Outfit';cx.fillStyle=clrs[i];cx.fillText(v.toFixed(1),col1X+col1W-26,y+8);
+      y+=14;
+    });
+
+    // ══ COLUMN 2: Detailed scores (2 sub-columns) ══
+    y=topY;
+    cx.font='bold 7px "Noto Sans SC"';cx.fillStyle='#c8cdd6';cx.fillText('详细评分 DETAILED SCORES',col2X,y+6);
+    cx.fillStyle='rgba(255,255,255,0.06)';cx.fillRect(col2X,y+10,col2W,0.5);y+=14;
+    const subW=col2W/2-2;
+
+    function drawCol(cats,ox,sy){
+      let cy=sy;
+      cats.forEach(cat=>{
+        const ci=C.indexOf(cat);
+        cx.fillStyle=clrs[ci];cx.fillRect(ox,cy,2,6);
+        cx.font='600 6px "Noto Sans SC"';cx.fillStyle='#c8cdd6';cx.fillText(cat.nm,ox+5,cy+5.5);
+        cx.font='bold 6px Outfit';cx.fillStyle=clrs[ci];cx.textAlign='right';cx.fillText(ev.cs[cat.id].toFixed(2),ox+subW-2,cy+5.5);cx.textAlign='left';
+        cy+=9;
+        cat.it.forEach(item=>{
+          const sc=ev.S[item.id]||0;
+          cx.font='400 5.5px "Noto Sans SC"';cx.fillStyle='#8891a0';cx.fillText(item.nm,ox+5,cy+5);
+          for(let s=1;s<=5;s++){cx.beginPath();cx.arc(ox+subW-2-6*(5-s),cy+3.5,1.8,0,Math.PI*2);cx.fillStyle=s<=sc?clrs[ci]:'rgba(255,255,255,0.06)';cx.fill()}
+          cy+=8;
+        });
+        cy+=4;
+      });
+      return cy;
+    }
+    drawCol(C.slice(0,3),col2X,y);
+    drawCol(C.slice(3,6),col2X+subW+4,y);
+
+    // ══ COLUMN 3: Qualitative ══
+    y=topY;
+
+    // Position
+    cx.font='bold 7px "Noto Sans SC"';cx.fillStyle='#9b7af7';cx.fillText('◆ 多位置适应性',col3X,y+6);y+=12;
+    cx.font='400 5.5px "Noto Sans SC"';cx.fillStyle='#8891a0';
+    if(ev.xB){cx.fillStyle='#c8cdd6';cx.fillText('后场',col3X+2,y+5);cx.fillStyle='#8891a0';y+=8;wt(ev.xB,col3W-8).forEach(l=>{cx.fillText(l,col3X+2,y+5);y+=7});y+=2}
+    if(ev.xM){cx.fillStyle='#c8cdd6';cx.fillText('中场',col3X+2,y+5);cx.fillStyle='#8891a0';y+=8;wt(ev.xM,col3W-8).forEach(l=>{cx.fillText(l,col3X+2,y+5);y+=7});y+=2}
+    if(ev.xF){cx.fillStyle='#c8cdd6';cx.fillText('前场',col3X+2,y+5);cx.fillStyle='#8891a0';y+=8;wt(ev.xF,col3W-8).forEach(l=>{cx.fillText(l,col3X+2,y+5);y+=7});y+=2}
+    y+=3;cx.fillStyle='rgba(255,255,255,0.04)';cx.fillRect(col3X,y,col3W,0.5);y+=6;
+
+    // Strengths
+    cx.font='bold 7px "Noto Sans SC"';cx.fillStyle='#3ecf8e';cx.fillText('⚡ 核心优势',col3X,y+5);y+=10;
+    cx.font='400 5.5px "Noto Sans SC"';cx.fillStyle='#c8cdd6';
+    if(ev.qS){ev.qS.split(/[,，\n]/).filter(s=>s.trim()).forEach(s=>{wt('• '+s.trim(),col3W-6).forEach(l=>{cx.fillText(l,col3X+2,y+5);y+=7});y+=1})}
+    y+=3;cx.fillStyle='rgba(255,255,255,0.04)';cx.fillRect(col3X,y,col3W,0.5);y+=6;
+
+    // Dev areas
+    cx.font='bold 7px "Noto Sans SC"';cx.fillStyle='#f7a840';cx.fillText('🎯 待开发领域',col3X,y+5);y+=10;
+    cx.font='400 5.5px "Noto Sans SC"';cx.fillStyle='#c8cdd6';
+    if(ev.qD){ev.qD.split(/[,，\n]/).filter(s=>s.trim()).forEach(s=>{wt('• '+s.trim(),col3W-6).forEach(l=>{cx.fillText(l,col3X+2,y+5);y+=7});y+=1})}
+    y+=3;cx.fillStyle='rgba(255,255,255,0.04)';cx.fillRect(col3X,y,col3W,0.5);y+=6;
+
+    // Action plan
+    cx.font='bold 7px "Noto Sans SC"';cx.fillStyle='#4da6ff';cx.fillText('📋 发展建议',col3X,y+5);y+=10;
+    cx.font='400 5.5px "Noto Sans SC"';cx.fillStyle='#c8cdd6';
+    if(ev.qA){wt(ev.qA,col3W-6).forEach(l=>{cx.fillText(l,col3X+2,y+5);y+=7})}
+    y+=3;cx.fillStyle='rgba(255,255,255,0.04)';cx.fillRect(col3X,y,col3W,0.5);y+=6;
+
+    // Comparison (if exists)
+    const prev=E.filter(e=>e.pn===ev.pn&&e.id!==ev.id);
+    if(prev.length){
+      const p=prev[prev.length-1];
+      cx.font='bold 7px "Noto Sans SC"';cx.fillStyle='#c9a84c';cx.fillText('◆ 与上次对比',col3X,y+5);y+=10;
+      cx.font='400 5.5px "Noto Sans SC"';
+      C.forEach((cat,i)=>{
+        const df=ev.cs[cat.id]-(p.cs[cat.id]||0);
+        cx.fillStyle='#8891a0';cx.fillText(cat.nm.slice(0,2),col3X+2,y+5);
+        cx.font='bold 6px Outfit';cx.fillStyle=clrs[i];cx.fillText(ev.cs[cat.id].toFixed(1),col3X+30,y+5);
+        cx.fillStyle=df>0.05?'#3ecf8e':df<-0.05?'#ef5350':'#8891a0';
+        cx.fillText((df>0?'↑+':'↓')+Math.abs(df).toFixed(1),col3X+52,y+5);
+        cx.font='400 5.5px "Noto Sans SC"';
+        y+=9;
+      });
+    }
+
+    // Footer
+    cx.font='300 5px Outfit,sans-serif';cx.fillStyle='#5c6577';cx.textAlign='center';
+    cx.fillText(`ScoutPro  |  ${ev.pn}  |  ${ev.date}  |  ${ev.age}`,W/2,H-6);cx.textAlign='left';
+
+    // ── Output PDF ──
+    const{jsPDF:J}=window.jspdf;
+    const pdf=new J({orientation:'landscape',unit:'pt',format:'a4'});
+    pdf.addImage(cv.toDataURL('image/jpeg',0.95),'JPEG',0,0,842,595);
+    pdf.save(`ScoutPro_${ev.pn}_${ev.date}.pdf`);
+  }catch(err){console.error(err);alert('PDF error: '+err.message)}
+  ov.style.display='none';
+}
+</script>
+</body>
+</html>
