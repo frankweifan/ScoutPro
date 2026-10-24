@@ -1,0 +1,1500 @@
+[
+{
+"name": "众禾双桥子足球公园",
+"brand": "众禾双桥子足球公园",
+"district": "锦江区",
+"address": "成都市锦江区双桥子南快速公交站前10米",
+"phone": "",
+"poi_type": "体育场;足球场;运动健身",
+"lng": 104.11063,
+"lat": 30.641719,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "经天320足球公园",
+"brand": "经天320足球公园",
+"district": "锦江区",
+"address": "成都市锦江区经天西路320号",
+"phone": "",
+"poi_type": "运动健身;体育场;足球场;体育馆;休闲娱乐运动",
+"lng": 104.102501,
+"lat": 30.596805,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "中锦驿动足球场",
+"brand": "中锦驿动足球场",
+"district": "锦江区",
+"address": "成都市锦江区静沙北路与静秀路交叉口西北50米",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 104.115119,
+"lat": 30.621134,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "兴城足球公园",
+"brand": "兴城足球公园",
+"district": "锦江区",
+"address": "成都市锦江区百日红中路蓝润V客东都-1期南侧约50米",
+"phone": "18512871289",
+"poi_type": "体育场;足球场;运动健身",
+"lng": 104.151872,
+"lat": 30.59655,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "香樟社区足球场",
+"brand": "香樟社区足球场",
+"district": "锦江区",
+"address": "成都市锦江区吉树街绿地中心云玺468",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 104.15147,
+"lat": 30.602195,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "动影三利星源足球场-成人竞训中心",
+"brand": "动影三利星源足球场",
+"district": "双流区",
+"address": "成都市双流区万东南一路与万东路交叉口东南200米",
+"phone": "",
+"poi_type": "科教文化服务;学校",
+"lng": 104.098707,
+"lat": 30.488227,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "青羊区光华大道蔡桥足球场",
+"brand": "青羊区光华大道蔡桥足球场",
+"district": "青羊区",
+"address": "成都市青羊区光华大道二段",
+"phone": "13558731323",
+"poi_type": "休闲娱乐;体育休闲",
+"lng": 103.946008,
+"lat": 30.666976,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "大公园-足球场",
+"brand": "大公园",
+"district": "青羊区",
+"address": "成都市青羊区蔡桥街道光华大道一段1666号",
+"phone": "",
+"poi_type": "体育休闲;休闲娱乐;体育馆;运动健身;体育场;足球场;休闲娱乐运动",
+"lng": 103.960695,
+"lat": 30.67159,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "星工场足球场",
+"brand": "星工场足球场",
+"district": "青羊区",
+"address": "成都市青羊区金沙街道金鹏街中大君悦金沙北侧",
+"phone": "",
+"poi_type": "休闲娱乐;运动健身;体育休闲;体育馆;足球场;球类运动;休闲娱乐运动",
+"lng": 103.996597,
+"lat": 30.679646,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "康达园足球场",
+"brand": "康达园足球场",
+"district": "青羊区",
+"address": "成都市青羊区纬八路成飞康达园东侧约60米",
+"phone": "",
+"poi_type": "休闲娱乐;室内娱乐",
+"lng": 103.961359,
+"lat": 30.693056,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "成都金沙足球公园",
+"brand": "金沙足球公园",
+"district": "金牛区",
+"address": "成都市金牛区茶店子街道范围内",
+"phone": "",
+"poi_type": "休闲娱乐运动;体育场馆;足球场",
+"lng": 104.014115,
+"lat": 30.68466,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "凤凰山体育公园-户外足球场",
+"brand": "凤凰山体育公园",
+"district": "金牛区",
+"address": "成都市金牛区天回镇街道荣德路80号",
+"phone": "",
+"poi_type": "休闲娱乐运动;体育场馆;足球场",
+"lng": 104.084001,
+"lat": 30.767425,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "羊犀足球场",
+"brand": "羊犀足球场",
+"district": "金牛区",
+"address": "成都市金牛区黄金东一路56号",
+"phone": "13982252485",
+"poi_type": "休闲娱乐;体育场;运动健身;体育休闲;体育馆;足球场;球类运动",
+"lng": 103.99883,
+"lat": 30.703722,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "金牛足球公园",
+"brand": "金牛足球公园",
+"district": "金牛区",
+"address": "成都市金牛区黄金路",
+"phone": "",
+"poi_type": "运动健身;体育场;足球场;体育馆;休闲娱乐运动",
+"lng": 103.989965,
+"lat": 30.706985,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "沙河源公园-足球场",
+"brand": "沙河源公园",
+"district": "金牛区",
+"address": "成都市金牛区九里堤北路88号(沙河源公园)",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 104.053867,
+"lat": 30.71825,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "金牛体育中心-足球场",
+"brand": "金牛体育中心",
+"district": "金牛区",
+"address": "成都市金牛区茶店子街道金牛体育中心",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;足球场;休闲娱乐运动",
+"lng": 104.034715,
+"lat": 30.691741,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "凤凰山体育公园专业足球场",
+"brand": "凤凰山体育公园专业足球场",
+"district": "金牛区",
+"address": "成都市金牛区天回镇街道范围内",
+"phone": "",
+"poi_type": "体育休闲;休闲娱乐;健身;运动健身;体育馆;足球场;休闲娱乐运动",
+"lng": 104.077473,
+"lat": 30.766487,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "成都谢菲联足球公园",
+"brand": "谢菲联足球公园",
+"district": "双流区",
+"address": "成都市双流区金河路与航园路交汇处附近西北",
+"phone": "",
+"poi_type": "景点公园;公园;scenic;风景名胜;景点",
+"lng": 103.906633,
+"lat": 30.595709,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "成都大牛足球公园",
+"brand": "大牛足球公园",
+"district": "武侯区",
+"address": "成都市武侯区武阳大道一段268号西北方向90米",
+"phone": "19141929971",
+"poi_type": "体育场;运动健身",
+"lng": 104.010445,
+"lat": 30.640807,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "空港足球公园",
+"brand": "空港足球公园",
+"district": "武侯区",
+"address": "成都市武侯区珠江北路11号成都台双医院附近",
+"phone": "",
+"poi_type": "运动健身;体育场;体育馆;足球场;休闲娱乐运动",
+"lng": 104.004876,
+"lat": 30.578052,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "五大花园体育运动公园-五人制足球场",
+"brand": "五大花园体育运动公园",
+"district": "武侯区",
+"address": "成都市武侯区晋吉东二街256号五大花园体育运动公园",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲",
+"lng": 104.00223,
+"lat": 30.64372,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "跳跳体育足球运动公园",
+"brand": "跳跳体育足球运动公园",
+"district": "武侯区",
+"address": "成都市武侯区机投桥街道川九路半边街新居西区西北角",
+"phone": "",
+"poi_type": "体育馆;足球场;休闲娱乐运动",
+"lng": 103.966554,
+"lat": 30.647593,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "本直东九运动公园足球场",
+"brand": "本直东九运动公园足球场",
+"district": "成华区",
+"address": "成都市成华区范围内",
+"phone": "",
+"poi_type": "休闲娱乐运动;体育场馆;足球场",
+"lng": 104.097357,
+"lat": 30.701997,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "Joma BCN外双楠足球场",
+"brand": "Joma BCN外双楠足球场",
+"district": "武侯区",
+"address": "成都市武侯区吉顺街88号",
+"phone": "15982055921",
+"poi_type": "休闲娱乐;室内娱乐",
+"lng": 104.005834,
+"lat": 30.636712,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "丽都公园-足球场",
+"brand": "丽都公园",
+"district": "武侯区",
+"address": "成都市武侯区丽都路1号附1号",
+"phone": "13408631001",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 104.03576,
+"lat": 30.62833,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "武侯足球公园",
+"brand": "武侯足球公园",
+"district": "武侯区",
+"address": "成都市武侯区潮音路62号",
+"phone": "028-83384455",
+"poi_type": "景点公园;景点;公园;scenic;风景名胜;主题公园;旅游",
+"lng": 103.984817,
+"lat": 30.638892,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "新都香城体育中心足球场",
+"brand": "新都香城体育中心足球场",
+"district": "新都区",
+"address": "成都市新都区新都街道范围内",
+"phone": "",
+"poi_type": "休闲娱乐;体育馆;足球场;休闲娱乐运动",
+"lng": 104.195819,
+"lat": 30.809401,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "双流体育中心-五人制足球场",
+"brand": "双流体育中心",
+"district": "双流区",
+"address": "成都市双流区银河路五段20双流体育中心内",
+"phone": "13568918875",
+"poi_type": "休闲娱乐;体育场;运动健身;体育休闲;体育馆;足球场",
+"lng": 103.894647,
+"lat": 30.572105,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "香城体育中心7人制足球场",
+"brand": "香城体育中心7人制足球场",
+"district": "新都区",
+"address": "成都市新都区兴乐北路88正东方向140米",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲",
+"lng": 104.195551,
+"lat": 30.809697,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "香城体育中心5人制足球场",
+"brand": "香城体育中心5人制足球场",
+"district": "新都区",
+"address": "成都市新都区兴乐北路188正东方向170米",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲",
+"lng": 104.19622,
+"lat": 30.810394,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "皇家YS足球场",
+"brand": "皇家YS足球场",
+"district": "武侯区",
+"address": "成都市武侯区桂溪街道科华南路和平小区四期(东苑B区西)",
+"phone": "",
+"poi_type": "体育休闲;休闲娱乐;运动健身;体育馆;足球场;休闲娱乐运动",
+"lng": 104.076023,
+"lat": 30.605649,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "翊宸足球公园",
+"brand": "翊宸足球公园",
+"district": "武侯区",
+"address": "成都市武侯区新园大道17号",
+"phone": "",
+"poi_type": "休闲娱乐;室内娱乐",
+"lng": 104.039701,
+"lat": 30.583652,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "成华圣灯公园-足球场",
+"brand": "成华圣灯公园",
+"district": "成华区",
+"address": "成都市成华区成华大道和物流大道交汇处成华圣灯公园",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 104.14753,
+"lat": 30.68551,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "城市仁德足球公园",
+"brand": "城市仁德足球公园",
+"district": "成华区",
+"address": "成都市成华区龙潭街道",
+"phone": "",
+"poi_type": "风景名胜;scenic;景点;休闲娱乐运动",
+"lng": 104.145064,
+"lat": 30.706101,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "东方足球场",
+"brand": "东方足球场",
+"district": "成华区",
+"address": "成都市成华区杉板桥南三路55号",
+"phone": "028-83278273",
+"poi_type": "休闲娱乐;体育场;运动健身;体育休闲;体育馆;足球场",
+"lng": 104.120693,
+"lat": 30.662442,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "天河足球场",
+"brand": "天河足球场",
+"district": "郫都区",
+"address": "成都市郫都区天河路288号",
+"phone": "18628373081",
+"poi_type": "休闲娱乐;体育场;运动健身;体育休闲;体育馆;足球场",
+"lng": 103.97786,
+"lat": 30.7483,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "犀和足球场",
+"brand": "犀和足球场",
+"district": "郫都区",
+"address": "成都市郫都区校园路与曲锦路交叉路口往西南约100米",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 103.971241,
+"lat": 30.767536,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "犀浦荣胜足球场",
+"brand": "犀浦荣胜足球场",
+"district": "郫都区",
+"address": "成都市郫都区王公堰路与石亭路交叉口西南300米",
+"phone": "",
+"poi_type": "休闲娱乐;体育休闲;体育场",
+"lng": 103.97907,
+"lat": 30.772163,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "10号足球公园",
+"brand": "10号足球公园",
+"district": "郫都区",
+"address": "成都市郫都区科化二路杜鹃路38号",
+"phone": "18180555898",
+"poi_type": "体育场;足球场;运动健身",
+"lng": 103.899576,
+"lat": 30.796917,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "天翼足球公园",
+"brand": "天翼足球公园",
+"district": "双流区",
+"address": "成都市双流区金河路66号",
+"phone": "",
+"poi_type": "体育场;运动健身",
+"lng": 103.903598,
+"lat": 30.598942,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "会龙公园足球场",
+"brand": "会龙公园足球场",
+"district": "双流区",
+"address": "成都市双流区华府大道一段与观音湾路交叉口东320米",
+"phone": "",
+"poi_type": "休闲娱乐;体育休闲;体育场",
+"lng": 104.065,
+"lat": 30.526543,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "20号足球公园",
+"brand": "20号足球公园",
+"district": "双流区",
+"address": "成都市双流区杭州路东段与蜀州路交叉口西南150米",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 104.070274,
+"lat": 30.434887,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "西赞·酷玛足球公园",
+"brand": "西赞",
+"district": "双流区",
+"address": "成都市双流区范围内",
+"phone": "",
+"poi_type": "休闲娱乐运动;体育场馆;足球场",
+"lng": 103.913072,
+"lat": 30.547026,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "锐博足球公园",
+"brand": "锐博足球公园",
+"district": "双流区",
+"address": "成都市双流区正东下街",
+"phone": "",
+"poi_type": "运动健身;体育场;足球场;体育馆;休闲娱乐运动",
+"lng": 104.067918,
+"lat": 30.500972,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "众恒泰足球公园",
+"brand": "众恒泰足球公园",
+"district": "大邑县",
+"address": "成都市大邑县桃源大道139号",
+"phone": "",
+"poi_type": "体育场;运动健身",
+"lng": 103.50859,
+"lat": 30.57309,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "百灵鸟FDSP踢球者足球公园",
+"brand": "百灵鸟FDSP踢球者足球公园",
+"district": "龙泉驿区",
+"address": "成都市龙泉驿区大面街道惠王陵东路508号",
+"phone": "",
+"poi_type": "足球场;运动健身;体育馆;休闲娱乐运动",
+"lng": 104.154946,
+"lat": 30.615603,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "东安湖体育公园室外足球场",
+"brand": "东安湖体育公园室外足球场",
+"district": "龙泉驿区",
+"address": "成都市龙泉驿区东安街道范围内",
+"phone": "",
+"poi_type": "休闲娱乐;体育馆;足球场;休闲娱乐运动",
+"lng": 104.246831,
+"lat": 30.598041,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "中和T98足球场",
+"brand": "中和T98足球场",
+"district": "高新区",
+"address": "成都市高新区中和街道中柏大道延长壳牌加油站以东200米",
+"phone": "",
+"poi_type": "足球场;运动健身;体育休闲",
+"lng": 104.102672,
+"lat": 30.541316,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "简阳市体育中心-足球场",
+"brand": "简阳市体育中心",
+"district": "简阳市",
+"address": "成都市简阳市体育中心内",
+"phone": "15760024700",
+"poi_type": "休闲娱乐;体育场;运动健身;体育休闲;体育馆;球类运动",
+"lng": 104.54924,
+"lat": 30.40598,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "国际足球村",
+"brand": "国际足球村",
+"district": "龙泉驿区",
+"address": "成都市龙泉驿区忠北路与忠诚路交叉口东南200米",
+"phone": "",
+"poi_type": "住宅小区;小区/楼盘/住宅区",
+"lng": 104.30573,
+"lat": 30.61521,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "成都市龙泉驿阳光城专业足球场",
+"brand": "龙泉驿阳光城专业足球场",
+"district": "龙泉驿区",
+"address": "成都市龙泉驿区忠北路180号",
+"phone": "",
+"poi_type": "休闲娱乐;室内娱乐",
+"lng": 104.310516,
+"lat": 30.613342,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "成都市青白江区文体中心-足球场",
+"brand": "青白江区文体中心",
+"district": "青白江区",
+"address": "成都市青白江区凤凰西七路366号(成都市青白江区文体中心)",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 104.258748,
+"lat": 30.896384,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "新都区三河村足球场",
+"brand": "新都区三河村足球场",
+"district": "新都区",
+"address": "成都市新都区斑竹园街道范围内",
+"phone": "",
+"poi_type": "休闲娱乐运动;体育场馆;足球场",
+"lng": 104.081066,
+"lat": 30.847591,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "崇州市体育中心-足球场",
+"brand": "崇州市体育中心",
+"district": "崇州市",
+"address": "成都市崇州市崇阳街道兴体街与英姿街交汇处体育中心",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;足球场;休闲娱乐运动",
+"lng": 103.676561,
+"lat": 30.637399,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "迪卡侬免费运动场-足球场",
+"brand": "迪卡侬免费运动场",
+"district": "郫都区",
+"address": "成都市郫都区中信大道一段103迪卡侬",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 103.898099,
+"lat": 30.784017,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "创客足球运动中心",
+"brand": "创客足球运动中心",
+"district": "郫都区",
+"address": "成都市郫都区德源街道展望东路与胜利北街交汇处创新展览中心西侧",
+"phone": "",
+"poi_type": "体育休闲;休闲娱乐;体育馆;运动健身;体育场;足球场;休闲娱乐运动",
+"lng": 103.858817,
+"lat": 30.780811,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "千竞足球中心(空港运动公园店)",
+"brand": "千竞足球中心",
+"district": "双流区",
+"address": "成都市双流区范围内",
+"phone": "",
+"poi_type": "休闲娱乐运动;体育场馆;足球场",
+"lng": 103.956647,
+"lat": 30.595546,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "川投五人制足球场",
+"brand": "川投五人制足球场",
+"district": "双流区",
+"address": "成都市双流区金河路66号四川国际网球中心内",
+"phone": "028-85893566",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 103.90401,
+"lat": 30.59876,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "百溪堰五人制足球场",
+"brand": "百溪堰五人制足球场",
+"district": "新津区",
+"address": "成都市新津区五津街道太中东街与清源路交汇处津城绿地东区东侧",
+"phone": "",
+"poi_type": "体育休闲;休闲娱乐;体育馆;运动健身;体育场;足球场;休闲娱乐运动",
+"lng": 103.821469,
+"lat": 30.416928,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "海航·中国集·锦润青城-足球场",
+"brand": "海航",
+"district": "都江堰市",
+"address": "成都市都江堰市海航中国集·锦润青城西北门(海航·中国集·锦润青城)",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 103.66766,
+"lat": 30.89191,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "圣力凯运动中心-足球场",
+"brand": "圣力凯运动中心",
+"district": "彭州市",
+"address": "成都市彭州市天彭街道天府西路198号",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身",
+"lng": 103.936213,
+"lat": 30.978862,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "成都仕艾康足球运动中心",
+"brand": "仕艾康足球运动中心",
+"district": "成华区",
+"address": "成都市成华区跳蹬河北路公交站斜对面",
+"phone": "",
+"poi_type": "休闲娱乐;体育馆;体育休闲;运动健身;体育场;足球场;休闲娱乐运动",
+"lng": 104.122482,
+"lat": 30.661115,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "五粮液文化体育中心专业足球场",
+"brand": "五粮液文化体育中心专业足球场",
+"district": "金牛区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/vugjno"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "天际线麒志体育足球公园",
+"brand": "天际线麒志体育足球公园",
+"district": "锦江区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/grroqj"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "东安湖公园运动岛足球场",
+"brand": "东安湖公园运动岛足球场",
+"district": "天府新区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/mmyjrt"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "叁分足球公园",
+"brand": "叁分足球公园",
+"district": "天府新区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/qxmpkw"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "凤凰山体育公园户外足球场",
+"brand": "凤凰山体育公园户外足球场",
+"district": "金牛区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/bawbsv"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "兴恒足球公园",
+"brand": "兴恒足球公园",
+"district": "金牛区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/twppoa"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "东坡体育公园足球场",
+"brand": "东坡体育公园足球场",
+"district": "青羊区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/lbfbta"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "城东足球公园",
+"brand": "城东足球公园",
+"district": "成华区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/dlcrox"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "塔子山九天足球场",
+"brand": "塔子山九天足球场",
+"district": "锦江区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/gjwsre"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "成都兴城邻里足球公园",
+"brand": "兴城邻里足球公园",
+"district": "锦江区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/gasacr"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "金牛体育中心足球场",
+"brand": "金牛体育中心足球场",
+"district": "金牛区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/mjgjso"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "中国现代五项赛事中心-足球场",
+"brand": "中国现代五项赛事中心",
+"district": "天府新区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/zwyzvn"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "潮音水岸篮球足球场",
+"brand": "潮音水岸篮球足球场",
+"district": "武侯区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/trxnhl"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "爱球青龙场五人制足球场",
+"brand": "爱球青龙场五人制足球场",
+"district": "成华区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/cvsgbb"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "郫都区市民体育公园足球场",
+"brand": "郫都区市民体育公园足球场",
+"district": "郫都区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/lfpjdo"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "FF足球公园",
+"brand": "FF足球公园",
+"district": "青羊区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/jjobew"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "WePark玩湃社区智慧足球公园",
+"brand": "WePark玩湃社区智慧足球公园",
+"district": "青羊区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/krvjel"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "成东·11号足球公园",
+"brand": "成东",
+"district": "成华区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/foxwbr"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "红石足球公园",
+"brand": "红石足球公园",
+"district": "天府新区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/fgkgtq"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "城投青和·本直东九运动公园足球场",
+"brand": "城投青和",
+"district": "成华区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/ainizt"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "四川新北足球中心",
+"brand": "新北足球中心",
+"district": "武侯区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/cixjsi"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "雷速益动足球公园",
+"brand": "雷速益动足球公园",
+"district": "郫都区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/yoyoay"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "成都第一足球村",
+"brand": "第一足球村",
+"district": "新都区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/kpljap"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "戴蒙·西区八人制足球场",
+"brand": "戴蒙",
+"district": "郫都区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/uqpiyo"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "海创园足球场",
+"brand": "海创园足球场",
+"district": "天府新区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/exbznr"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "动影聚创十陵足球场-成人竞训中心",
+"brand": "动影聚创十陵足球场",
+"district": "龙泉驿区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/uszjck"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "贝跃动室外足球场(方圆荟TOPARK店)",
+"brand": "贝跃动室外足球场",
+"district": "天府新区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/gxwsqi"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "川化时光驿站足球场",
+"brand": "川化时光驿站足球场",
+"district": "青白江区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/znadog"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "道之龙体育足球场",
+"brand": "道之龙体育足球场",
+"district": "新都区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/ylgobt"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "竟扬体育足球公园",
+"brand": "竟扬体育足球公园",
+"district": "都江堰市",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/qsnabe"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "润林足球场",
+"brand": "润林足球场",
+"district": "武侯区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/yrbrzt"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "筑桥足球场",
+"brand": "筑桥足球场",
+"district": "郫都区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/imktcz"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "毛家湾足球训练基地",
+"brand": "毛家湾足球训练基地",
+"district": "双流区",
+"address": "成都市双流区正兴街道回龙井附近",
+"phone": "",
+"poi_type": "休闲娱乐;其它文化教育设施;科教文化;文化教育",
+"lng": 104.006582,
+"lat": 30.427577,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "四川成都足球广场",
+"brand": "成都足球广场",
+"district": "武侯区",
+"address": "成都市武侯区太平寺西路",
+"phone": "",
+"poi_type": "休闲娱乐;体育场;体育馆;体育休闲;运动健身;足球场;休闲娱乐运动",
+"lng": 104.02461,
+"lat": 30.600413,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "水韵园综合教育基地足球场",
+"brand": "水韵园综合教育基地足球场",
+"district": "武侯区",
+"address": "成都市武侯区金花桥街道映月西街映月颐园17幢正西方向170米",
+"phone": "",
+"poi_type": "休闲娱乐;室内娱乐",
+"lng": 103.96347,
+"lat": 30.607276,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "斑竹园足球音乐小镇",
+"brand": "斑竹园足球音乐小镇",
+"district": "新都区",
+"address": "成都市新都区斑竹园足球音乐小镇",
+"phone": "",
+"poi_type": "风景名胜;scenic;景点;休闲娱乐;观光景点;景点公园",
+"lng": 104.080209,
+"lat": 30.8368,
+"sources": [
+"360地图 POI（restapi.map.so.com）"
+],
+"confidence": "中",
+"status": "运营中（地图收录）",
+"type": "场馆运营方"
+},
+{
+"name": "晨辉路公园足球基地",
+"brand": "晨辉路公园足球基地",
+"district": "锦江区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/nhqkcg"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+},
+{
+"name": "诺坎普足球平衡车滑步车公园",
+"brand": "诺坎普足球平衡车滑步车公园",
+"district": "龙泉驿区",
+"address": "",
+"phone": "",
+"sources": [
+"https://huodong.com/venue/detail/ixzxdx"
+],
+"confidence": "低",
+"status": "运营中（平台收录）",
+"type": "场馆运营方"
+}
+]
