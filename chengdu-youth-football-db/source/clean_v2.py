@@ -94,6 +94,8 @@ ENR = list(e1.E)
 try:
     spec2 = importlib.util.spec_from_file_location("e2", "enrich2.py"); e2 = importlib.util.module_from_spec(spec2); spec2.loader.exec_module(e2)
     ENR += list(e2.E)
+    for a_ in getattr(e2, "ADD", []):
+        if not any(o["name"] == a_["name"] for o in orgs): orgs.append(dict(a_))
 except FileNotFoundError:
     pass
 

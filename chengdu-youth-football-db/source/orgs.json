@@ -195,7 +195,7 @@
 "coaches": null,
 "students": 5000,
 "scale_note": "多支6–12岁梯队及兴趣班；累计学员5000余名（百度百科，2025）；约2017年调查：教练10余名",
-"campuses": "西村、光华、清波、桂溪、晨辉 5个校区（百度百科）；青羊区贝森北路1号西村大院",
+"campuses": "西村、光华、清波、桂溪、晨辉 5个校区（百度百科）；青羊区贝森北路1号西村大院；青羊区光华北一路561号1层（教育宝：成都皇贝体育培训）",
 "age_range": "6–12岁梯队",
 "price_note": "较早调查：寒假班1280元（年份未标注）",
 "honors_note": "据称2019年获中国足协“全国社会足球品牌青训机构”认定（四川唯一）；青训总教练持亚足联A级；青训总教练张林海（原成都五牛主帅）",
@@ -204,12 +204,15 @@
 "https://baike.baidu.com/item/%E7%9A%87%E5%AE%B6%E8%B4%9D%E9%87%8C%E6%96%AF%E8%B6%B3%E7%90%83%E4%BF%B1%E4%B9%90%E9%83%A8/16686556",
 "https://m.dongqiudi.com/article/2144123.html",
 "360地图 POI（restapi.map.so.com）",
-"http://www.dianping.com/shop/25035403/photos?pg=17"
+"http://www.dianping.com/shop/25035403/photos?pg=17",
+"https://cd.jiaoyubao.cn/zuqiu/",
+"https://m.jiaoyubao.cn/cd/zuqiu2/"
 ],
 "confidence": "中",
 "status": "待核实",
 "youth": "已证实（有来源）",
-"note": "有门店页（西村校区），评分未显示"
+"note": "有门店页（西村校区），评分未显示；教育宝另列贝森北路1号1栋5层514-1号",
+"legal_name": "成都皇家贝里斯足球俱乐部有限公司；四川皇贝体育发展有限公司（教育宝）"
 },
 {
 "name": "四川省宇晖仁德足球俱乐部（卡尔美·成都仁德足球青训基地）",
@@ -360,13 +363,16 @@
 "sources": [
 "https://huodong.com/venue/detail/eyLaA",
 "https://sichuan.scol.com.cn/ggxw/202302/58806642.html",
-"https://cd.jiaoyubao.cn/zuqiu/dt_z1910.html"
+"https://cd.jiaoyubao.cn/zuqiu/dt_z1910.html",
+"https://cd.jiaoyubao.cn/ban/zuqiu/"
 ],
 "confidence": "中",
 "scale_note": "参加第一届中国青少年足球联赛（四川赛区）U9并小组出线；场地地图列有“众禾双桥子足球公园”（关系未证实）",
 "status": "待核实",
 "youth": "待核实（来源未证实青训业务）",
-"note": "教育宝：暂无评分"
+"note": "教育宝：暂无评分；教育宝收录为“成都众禾足球培训”",
+"rating": 3.0,
+"rating_platform": "教育宝"
 },
 {
 "name": "以恒足球俱乐部（武侯校区）",
@@ -636,12 +642,14 @@
 "price_note": "",
 "honors_note": "",
 "sources": [
-"https://cd.jiaoyubao.cn/zuqiu/qu_jinniu.html"
+"https://cd.jiaoyubao.cn/zuqiu/qu_jinniu.html",
+"https://m.jiaoyubao.cn/cd/zuqiu2/"
 ],
 "confidence": "中",
 "note": "教育宝地址为机构自填，可能已过时",
 "status": "待核实",
-"youth": "已证实（有来源）"
+"youth": "已证实（有来源）",
+"legal_name": "成都杰冠体育文化传播有限公司（教育宝）"
 },
 {
 "name": "成都大牛体育培训",
@@ -658,12 +666,13 @@
 "scale_note": "教育宝金牛区足球培训列表收录",
 "campuses": "",
 "age_range": "",
-"rating": null,
-"rating_platform": "",
+"rating": 3.0,
+"rating_platform": "教育宝",
 "price_note": "",
 "honors_note": "",
 "sources": [
-"https://cd.jiaoyubao.cn/zuqiu/qu_jinniu.html"
+"https://cd.jiaoyubao.cn/zuqiu/qu_jinniu.html",
+"https://cd.jiaoyubao.cn/ban/zuqiu/"
 ],
 "confidence": "中",
 "note": "教育宝地址为机构自填，可能已过时",
@@ -2010,14 +2019,17 @@
 "lat": 30.578092,
 "sources": [
 "360地图 POI（restapi.map.so.com）",
-"https://cd.jiaoyubao.cn/zuqiu/dt_z1910.html"
+"https://cd.jiaoyubao.cn/zuqiu/dt_z1910.html",
+"https://cd.jiaoyubao.cn/ban/zuqiu/"
 ],
 "confidence": "中",
 "status": "运营中（地图收录）",
 "type": "业余俱乐部",
 "youth": "待核实（可能为成人业余球队/场地）",
 "campuses": "锦江区 众禾双桥子足球公园（环球汇·天誉）；另见静思南巷与中环路锦绣大道段交叉口",
-"note": "教育宝：暂无评分"
+"note": "教育宝：暂无评分；教育宝收录为“成都众禾足球培训”",
+"rating": 3.0,
+"rating_platform": "教育宝"
 },
 {
 "name": "富搏足球俱乐部(天府中心店)",
@@ -2210,12 +2222,16 @@
 "address": "",
 "phone": "",
 "sources": [
-"https://huodong.com/venue/detail/aiufet"
+"https://huodong.com/venue/detail/aiufet",
+"https://cd.jiaoyubao.cn/ban/zuqiu/"
 ],
 "confidence": "低",
 "status": "运营中（平台收录）",
 "type": "业余俱乐部",
-"youth": "名称显示青少年业务（待核实）"
+"youth": "已证实（有来源）",
+"rating": 3.0,
+"rating_platform": "教育宝",
+"note": "教育宝收录为“成都中达舒弘体育培训”（足球培训，评分3.0）"
 },
 {
 "name": "成都市蜀龙骁将足球俱乐部",
@@ -2252,12 +2268,16 @@
 "address": "",
 "phone": "",
 "sources": [
-"https://huodong.com/venue/detail/hylemk"
+"https://huodong.com/venue/detail/hylemk",
+"https://cd.jiaoyubao.cn/ban/zuqiu/"
 ],
 "confidence": "低",
 "status": "运营中（平台收录）",
 "type": "业余俱乐部",
-"youth": "名称显示青少年业务（待核实）"
+"youth": "已证实（有来源）",
+"rating": 3.0,
+"rating_platform": "教育宝",
+"note": "教育宝收录为“成都中达舒弘体育培训”（足球培训，评分3.0）"
 },
 {
 "name": "锋跃足球训练基地",
@@ -2490,12 +2510,16 @@
 "address": "",
 "phone": "",
 "sources": [
-"https://huodong.com/venue/detail/qiedwg"
+"https://huodong.com/venue/detail/qiedwg",
+"https://cd.jiaoyubao.cn/ban/zuqiu/"
 ],
 "confidence": "低",
 "status": "运营中（平台收录）",
 "type": "业余俱乐部",
-"youth": "名称显示青少年业务（待核实）"
+"youth": "已证实（有来源）",
+"rating": 3.0,
+"rating_platform": "教育宝",
+"note": "教育宝收录为“成都中达舒弘体育培训”（足球培训，评分3.0）"
 },
 {
 "name": "佳芮丽五人制足球俱乐部",
@@ -2580,5 +2604,37 @@
 "status": "运营中（平台收录）",
 "type": "培训机构",
 "youth": "名称显示青少年业务（待核实）"
+},
+{
+"name": "四川顶点体育集训基地",
+"brand": "顶点体育",
+"district": "全市/多区",
+"type": "培训机构",
+"youth": "待核实（来源未证实青训业务）",
+"rating": 4.0,
+"rating_platform": "教育宝",
+"scale_note": "教育宝足球培训频道收录；名称为“集训基地”，可能以体育中考/特长生集训为主",
+"sources": [
+"https://m.jiaoyubao.cn/cd/zuqiu2/"
+],
+"confidence": "低",
+"status": "待核实",
+"note": "所在区未注明"
+},
+{
+"name": "成都童道型动体育培训",
+"brand": "童道型动",
+"district": "全市/多区",
+"type": "培训机构",
+"youth": "已证实（有来源）",
+"rating": 3.0,
+"rating_platform": "教育宝",
+"scale_note": "教育宝收录：足球培训，1个网点",
+"sources": [
+"https://cd.jiaoyubao.cn/ban/zuqiu/"
+],
+"confidence": "低",
+"status": "待核实",
+"note": "所在区未注明"
 }
 ]
