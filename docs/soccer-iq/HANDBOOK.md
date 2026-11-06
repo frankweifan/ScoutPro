@@ -853,91 +853,91 @@ RLS 沿用现有思路：教练可读写本机构数据；家长只能读取自�
 
 **日本足协（JFA）官方**
 
-| 编号 | 来源 | 等级 |
-|---|---|---|
-| [J1] | JFA《Japan's Way》第 2 版（2025-12） | 一手·官方 |
-| [J2] | JFA《Small Sided Game ガイドライン》（2022-01-27） | 一手·官方 |
-| [J3] | JFA《8人制サッカーをしよう！》（2011） | 一手·官方 |
-| [J4] | JFA キッズハンドブック U-8/U-10（2012） | 一手·官方 |
-| [J5] | JFA ナショナルトレセン U-12 トレーニングメニュー（2020） | 一手·官方 |
-| [J6] | JFA ナショナルトレセン U-14 トレーニングメニュー 図 1（2024） | 一手·官方 |
-| [J7] | JFA アカデミー今治 日誌（2022，言語技術） | 一手·官方 |
-| [J8] | 岩手大学硕士论文（约 2010，转述 JFA 指導指針与 JFA 学院福岛） | 二手 |
+| 编号 | 来源 | 等级 | 链接 |
+|---|---|---|---|
+| [J1] | JFA《Japan's Way》第 2 版（2025-12） | 一手·官方 | <https://www.jfa.jp/japansway/japansway2026.pdf> |
+| [J2] | JFA《Small Sided Game ガイドライン》（2022-01-27） | 一手·官方 | <https://jfajp-img.jh.bit-drive.ne.jp/attachment/61f23dc0-05c0-42a5-abca-7f9ad3093d95/JFA_small_sided_gamessg_guideline20220127.pdf> |
+| [J3] | JFA《8人制サッカーをしよう！》（2011） | 一手·官方 | <https://www.jfa.jp/youth_development/players_first/pdf/8system.pdf> |
+| [J4] | JFA キッズハンドブック U-8/U-10（2012） | 一手·官方 | <https://www.jfa.jp/youth_development/players_first/pdf/u8u10.pdf> |
+| [J5] | JFA ナショナルトレセン U-12 トレーニングメニュー（2020） | 一手·官方 | <https://www.jfa.jp/youth_development/national_tracen/pdf/ntc_u12_menu_20.pdf> |
+| [J6] | JFA ナショナルトレセン U-14 トレーニングメニュー 図 1（2024） | 一手·官方 | <https://www.jfa.jp/youth_development/national_tracen_u14_2024/img/trainingmenu_01_01.png> |
+| [J7] | JFA アカデミー今治 日誌（2022，言語技術） | 一手·官方 | <https://www.jfa.jp/youth_development/jfa_academy/imabari/imabari_diary/news/00029999/> |
+| [J8] | 岩手大学硕士论文（约 2010，转述 JFA 指導指針与 JFA 学院福岛） | 二手 | <https://iwate-u.repo.nii.ac.jp/record/12528/files/546.pdf> |
 
 **日本俱乐部 / 教练**
 
-| 编号 | 来源 | 等级 |
-|---|---|---|
-| [JP1] | 池上正，サカイク 专栏（2026-04-24，失误与提问） | 二手·问答 |
-| [JP2] | 池上正，サカイク 专栏（2021-12-27，Funiño） | 二手·问答 |
-| [JP3] | 池上正，サカイク 专栏（2021-05-14，喊话递进） | 二手·问答 |
-| [JP4] | 池上正，サカイク 专栏（2026-05-29，4v4 反向） | 二手·问答 |
-| [JP5] | 池上正，サカイク 专栏（2021-10-15，短传与场地） | 二手·问答 |
-| [JP6] | 池上正，ジュニサカ 书摘（2017-05-17，最小单位） | 二手·书摘 |
-| [JP7] | 风间八宏，ジュニサカ 书摘（2017-05-08，止める） | 二手·书摘 |
-| [JP8] | 风间八宏，Number Web（2022，六项基本与 1 秒） | 二手·报道 |
-| [JP9] | 川崎前锋育成，REAL SPORTS（2023） | 二手·专栏 |
-| [JP10] | 川崎前锋 U-12，サカイク（2024） | 二手·采访 |
-| [JP11] | 坪井健太郎，フットボールチャンネル（2016，PAD+E） | 一手·本人 |
-| [JP12] | 岩政大树，フットボールチャンネル（2019） | 一手·本人 |
-| [JP13] | 岩政大树，REAL SPORTS（2019） | 二手·采访 |
-| [JP14] | 中野岛FC，サカイク（2023） | 二手·报道 |
-| [JP15] | 中野岛FC，COACH UNITED（2022） | 二手·报道 |
-| [JP16] | 山本雅史，COACH UNITED（2023，颜色卡） | 二手·报道 |
-| [JP17] | 住谷学（リベロ津軽SC），サカイク（2021） | 二手·报道 |
+| 编号 | 来源 | 等级 | 链接 |
+|---|---|---|---|
+| [JP1] | 池上正，サカイク 专栏（2026-04-24，失误与提问） | 二手·问答 | <https://www.sakaiku.jp/series/ikegami_column/2026/017451.html> |
+| [JP2] | 池上正，サカイク 专栏（2021-12-27，Funiño） | 二手·问答 | <https://www.sakaiku.jp/series/ikegami_column/2021/015552.html> |
+| [JP3] | 池上正，サカイク 专栏（2021-05-14，喊话递进） | 二手·问答 | <https://www.sakaiku.jp/series/ikegami_column/2021/015189.html> |
+| [JP4] | 池上正，サカイク 专栏（2026-05-29，4v4 反向） | 二手·问答 | <https://www.sakaiku.jp/series/ikegami_column/2026/017474.html> |
+| [JP5] | 池上正，サカイク 专栏（2021-10-15，短传与场地） | 二手·问答 | <https://www.sakaiku.jp/series/ikegami_column/2021/015437.html> |
+| [JP6] | 池上正，ジュニサカ 书摘（2017-05-17，最小单位） | 二手·书摘 | <https://jr-soccer.jp/2017/05/17/post64198/> |
+| [JP7] | 风间八宏，ジュニサカ 书摘（2017-05-08，止める） | 二手·书摘 | <https://jr-soccer.jp/2017/05/08/post63397/> |
+| [JP8] | 风间八宏，Number Web（2022，六项基本与 1 秒） | 二手·报道 | <https://number.bunshun.jp/articles/-/854433?page=3> |
+| [JP9] | 川崎前锋育成，REAL SPORTS（2023） | 二手·专栏 | <https://real-sports.jp/page/articles/788234909436085258/> |
+| [JP10] | 川崎前锋 U-12，サカイク（2024） | 二手·采访 | <https://www.sakaiku.jp/series/jwc2024/2024/016896.html> |
+| [JP11] | 坪井健太郎，フットボールチャンネル（2016，PAD+E） | 一手·本人 | <https://www.footballchannel.jp/2016/07/17/post163747/> |
+| [JP12] | 岩政大树，フットボールチャンネル（2019） | 一手·本人 | <https://www.footballchannel.jp/2019/03/18/post313503/> |
+| [JP13] | 岩政大树，REAL SPORTS（2019） | 二手·采访 | <https://real-sports.jp/page/articles/303863207049561169/> |
+| [JP14] | 中野岛FC，サカイク（2023） | 二手·报道 | <https://www.sakaiku.jp/column/technique/2023/016172.html> |
+| [JP15] | 中野岛FC，COACH UNITED（2022） | 二手·报道 | <https://coachunited.jp/column/001233.html> |
+| [JP16] | 山本雅史，COACH UNITED（2023，颜色卡） | 二手·报道 | <https://coachunited.jp/column/001388.html> |
+| [JP17] | 住谷学（リベロ津軽SC），サカイク（2021） | 二手·报道 | <https://www.sakaiku.jp/column/technique/2021/014970.html> |
 
 **西班牙**
 
-| 编号 | 来源 | 等级 |
-|---|---|---|
-| [S1] | Real Decreto 320/2000（BOE，教练资格最低教学内容） | 一手·官方法规 |
-| [S2] | Tarragó, Massafret, Seirul·lo & Cos（2019），*Apunts* 137，结构化训练 | 一手·学术 |
-| [S3] | Lago Peñas，Barça Innovation Hub（2019），Seirul·lo 训练理论 | 一手·官方 |
-| [S4] | FC Barcelona 官网（2019），The foundations of Barça football | 一手·官方 |
-| [S5] | FC Barcelona 官网（2018），3P 与 U-14 进球 | 一手·官方 |
-| [S6] | Bradley 等，Barça Innovation Hub（2019），位置游戏 | 一手·官方 |
-| [S7] | Barça Innovation Hub（2026），青训模式 | 一手·官方 |
-| [S8] | Barça Innovation Hub（2025），认知—知觉训练 | 一手·官方 |
-| [S9] | Damunt，Barça Innovation Hub（2021），创造力阻碍与刺激 | 一手·官方 |
-| [S10] | Morelló, Vert & Navarro（2018），比利亚雷亚尔球员发展项目 | 一手·官方兼学术 |
-| [S11] | Díaz Losquiño & Solà（2018），*Apunts* 132，desmarque | 一手·学术 |
-| [S12] | González-Víllora 等（2015），RIMCAFD，UCLM | 一手·学术 |
-| [S13] | Gutiérrez 等（2026），*Retos*，理解式教学 | 一手·学术 |
-| [S14] | Herrera Elías，EFDeportes nº121（2008） | 二手 |
-| [S15] | Gálvez，EFDeportes nº138（2009），ruptura | 二手 |
-| [S16] | Simon Kuper，巴萨七个秘诀（转载） | 二手 |
-| [S17] | Sky Sports（2016），瓜迪奥拉五项创新 | 二手 |
-| [S18] | Ingendaay（约 2012），La Masia 采访 | 二手·采访 |
-| [S19] | Sergio Navarro 采访，IDE Universidad | 二手·采访 |
-| [S20] | *Retos* 88052，不平衡小场比赛与决策 | 仅搜索摘要 |
+| 编号 | 来源 | 等级 | 链接 |
+|---|---|---|---|
+| [S1] | Real Decreto 320/2000（BOE，教练资格最低教学内容） | 一手·官方法规 | <https://boe.es/boe/dias/2000/03/29/pdfs/A13098-13143.pdf> |
+| [S2] | Tarragó, Massafret, Seirul·lo & Cos（2019），*Apunts* 137，结构化训练 | 一手·学术 | <https://www.redalyc.org/articulo.oa?id=551660713009> |
+| [S3] | Lago Peñas，Barça Innovation Hub（2019），Seirul·lo 训练理论 | 一手·官方 | <https://barcainnovationhub.fcbarcelona.com/blog/paco-seirul%C2%B7los-proposal-for-team-sports-training-structured-training-game-spaces-and-preferential-simulation-situations/> |
+| [S4] | FC Barcelona 官网（2019），The foundations of Barça football | 一手·官方 | <https://www.fcbarcelona.com/en/club/news/1475196/the-foundations-of-barca-football> |
+| [S5] | FC Barcelona 官网（2018），3P 与 U-14 进球 | 一手·官方 | <https://www.fcbarcelona.com/en/football/mens-academy/news/910501/u-14s-b-goal-exemplifies-barca-dna-in-35-seconds> |
+| [S6] | Bradley 等，Barça Innovation Hub（2019），位置游戏 | 一手·官方 | <https://barcainnovationhub.fcbarcelona.com/es/blog/entrenamiento-especifico-de-la-posicion-y-el-juego-de-posicion-en-el-futbol-de-elite-el-contexto-importa/> |
+| [S7] | Barça Innovation Hub（2026），青训模式 | 一手·官方 | <https://barcainnovationhub.fcbarcelona.com/blog/the-models-of-youth-teams-in-football/> |
+| [S8] | Barça Innovation Hub（2025），认知—知觉训练 | 一手·官方 | <https://barcainnovationhub.fcbarcelona.com/blog/in-the-gym-of-the-mind-cognitive-perceptual-training/> |
+| [S9] | Damunt，Barça Innovation Hub（2021），创造力阻碍与刺激 | 一手·官方 | <https://barcainnovationhub.fcbarcelona.com/blog/sports-creativity-blockers-and-stimulators/> |
+| [S10] | Morelló, Vert & Navarro（2018），比利亚雷亚尔球员发展项目 | 一手·官方兼学术 | <https://www.redalyc.org/journal/6138/613865229003/613865229003.pdf> |
+| [S11] | Díaz Losquiño & Solà（2018），*Apunts* 132，desmarque | 一手·学术 | <https://www.redalyc.org/articulo.oa?id=551663355005> |
+| [S12] | González-Víllora 等（2015），RIMCAFD，UCLM | 一手·学术 | <https://www.redalyc.org/pdf/542/54241416005.pdf> |
+| [S13] | Gutiérrez 等（2026），*Retos*，理解式教学 | 一手·学术 | <https://revistaretos.org/index.php/retos/article/view/117474> |
+| [S14] | Herrera Elías，EFDeportes nº121（2008） | 二手 | <https://efdeportes.com/efd121/la-vision-de-juego-y-el-pase-en-futbol.htm> |
+| [S15] | Gálvez，EFDeportes nº138（2009），ruptura | 二手 | <https://efdeportes.com/efd138/desmarque-de-ruptura-en-futbol.htm> |
+| [S16] | Simon Kuper，巴萨七个秘诀（转载） | 二手 | <https://www.thecoachdiary.com/barcelonas-seven-secrets-to-success-by-simon-kuper/> |
+| [S17] | Sky Sports（2016），瓜迪奥拉五项创新 | 二手 | <https://www.skysports.com/football/news/15126/10505903/the-top-five-innovations-of-pep-guardiolas-coaching-career> |
+| [S18] | Ingendaay（约 2012），La Masia 采访 | 二手·采访 | <https://www.egonzehnder.com/cdn/serve/article-pdf/1513691074-16a6a615e3c6301483bf6dfa907e58ec.pdf> |
+| [S19] | Sergio Navarro 采访，IDE Universidad | 二手·采访 | <https://ideuniversidad.com/considerabamos-encontrar-el-talento-en-edades-tempranas-para-incorporarlo-a-la-familia-amarilla/> |
+| [S20] | *Retos* 88052，不平衡小场比赛与决策 | 仅搜索摘要 | <https://www.revistaretos.org/index.php/retos/article/view/88052> |
 
 **科学研究**
 
-| 编号 | 来源 | 等级 |
-|---|---|---|
-| [R1] | Jordet 等（2020），*Frontiers in Psychology*，英超扫描 | 一手·学术 |
-| [R2] | Aksum 等（2021），*Journal of Sports Sciences*，U17/U19 欧青赛扫描 | 一手·学术（摘要级） |
-| [R3] | McGuckian 等（2020），*Journal of Sports Sciences*，精英青少年转头 | 一手·学术（摘要级） |
-| [R4] | Hintermann 等（2025），*Frontiers in Sports and Active Living*，扫描训练 | 一手·学术 |
-| [R5] | Aksum 等（2021），*PLOS ONE*，眼动与扫描 | 一手·学术 |
-| [R6] | McGuckian 等（2018），*Frontiers in Psychology*，IMU 测转头 | 一手·学术 |
-| [R7] | Oslin 等（1998），GPAI | 一手·学术 |
-| [R8] | Costa 等（2011），FUT-SAT | 一手·学术 |
-| [R9] | Machado & Teoldo（2020），TacticUP | 一手·学术 |
-| [R10] | UCM 侵入类比赛观察工具（"接球时决策"信度 0.537） | 一手·学术 |
-| [R11] | Natsuhara 等（2020），*Perceptual and Motor Skills* | 一手·学术 |
-| [R12] | 小泉・中山（2025），体育学研究，线间转身 | 一手·学术（摘要级） |
-| [R13] | Martens 等（2021），*Frontiers in Sports and Active Living*，空间生成 | 一手·学术 |
-| [R14] | Sørensen 等（2021），第一脚教练评分 | 一手·学术 |
-| [R15] | Wright & Jackson（2014），欺骗动作 | 一手·学术 |
-| [R16] | Vogelbein 等（2014），*Journal of Sports Sciences*，防守反应时间 | 一手·学术 |
-| [R17] | 巴塞罗那大学，2010 世界杯防守转换 | 一手·学术 |
-| [R18] | Frontiers（2019），团队沟通与共享知识 | 一手·学术 |
-| [R19] | 诺丁汉特伦特大学，学院球员韧性行为 | 一手·学术 |
-| [R20] | Arbués-Sangüesa 等，arXiv 2004.07209，身体朝向 | 预印本 |
-| [R21] | Gradient Sports，无球跑动度量 | 二手·行业 |
-| [R22] | U10 与 U12 决策比较，PMC9693199 | 一手·学术 |
-| [R23] | 夏原等（2023），日本体育・スポーツ・健康学会，IMU 检测首振り | 会议摘要 |
+| 编号 | 来源 | 等级 | 链接 |
+|---|---|---|---|
+| [R1] | Jordet 等（2020），*Frontiers in Psychology*，英超扫描 | 一手·学术 | <https://pmc.ncbi.nlm.nih.gov/articles/PMC7573254/> |
+| [R2] | Aksum 等（2021），*Journal of Sports Sciences*，U17/U19 欧青赛扫描 | 一手·学术（摘要级） | <https://doi.org/10.1080/02640414.2021.1935115> |
+| [R3] | McGuckian 等（2020），*Journal of Sports Sciences*，精英青少年转头 | 一手·学术（摘要级） | <https://doi.org/10.1080/02640414.2020.1723375> |
+| [R4] | Hintermann 等（2025），*Frontiers in Sports and Active Living*，扫描训练 | 一手·学术 | <https://doi.org/10.3389/fspor.2025.1602099> |
+| [R5] | Aksum 等（2021），*PLOS ONE*，眼动与扫描 | 一手·学术 | <https://pmc.ncbi.nlm.nih.gov/articles/PMC8378692/> |
+| [R6] | McGuckian 等（2018），*Frontiers in Psychology*，IMU 测转头 | 一手·学术 | <https://doi.org/10.3389/fpsyg.2018.02520> |
+| [R7] | Oslin 等（1998），GPAI | 一手·学术 | <https://doi.org/10.1123/jtpe.17.2.231> |
+| [R8] | Costa 等（2011），FUT-SAT | 一手·学术 | <https://revistas.rcaap.pt/motricidade/article/view/121> |
+| [R9] | Machado & Teoldo（2020），TacticUP | 一手·学术 | <https://doi.org/10.3389/fpsyg.2020.01690> |
+| [R10] | UCM 侵入类比赛观察工具（"接球时决策"信度 0.537） | 一手·学术 | <https://produccioncientifica.ucm.es/documentos/678566520831ea00f9033cbd> |
+| [R11] | Natsuhara 等（2020），*Perceptual and Motor Skills* | 一手·学术 | <https://doi.org/10.1177/0031512519900057> |
+| [R12] | 小泉・中山（2025），体育学研究，线间转身 | 一手·学术（摘要级） | <https://doi.org/10.5432/jjpehss.008-24046> |
+| [R13] | Martens 等（2021），*Frontiers in Sports and Active Living*，空间生成 | 一手·学术 | <https://doi.org/10.3389/fspor.2021.676179> |
+| [R14] | Sørensen 等（2021），第一脚教练评分 | 一手·学术 | <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8156114/> |
+| [R15] | Wright & Jackson（2014），欺骗动作 | 一手·学术 | <https://repository.lboro.ac.uk/articles/journal_contribution/Deceptive_body_movements_reverse_spatial_cueing_in_soccer/9618764/1> |
+| [R16] | Vogelbein 等（2014），*Journal of Sports Sciences*，防守反应时间 | 一手·学术 | <https://doi.org/10.1080/02640414.2013.879671> |
+| [R17] | 巴塞罗那大学，2010 世界杯防守转换 | 一手·学术 | <https://diposit.ub.edu/items/94588039-0f93-4812-9e6c-930f16896fb5/full> |
+| [R18] | Frontiers（2019），团队沟通与共享知识 | 一手·学术 | <https://doaj.org/article/0bff04209448404886362257fd7d089a> |
+| [R19] | 诺丁汉特伦特大学，学院球员韧性行为 | 一手·学术 | <https://core.ac.uk/outputs/613036558> |
+| [R20] | Arbués-Sangüesa 等，arXiv 2004.07209，身体朝向 | 预印本 | <https://arxiv.org/pdf/2004.07209> |
+| [R21] | Gradient Sports，无球跑动度量 | 二手·行业 | <https://www.gradientsports.com/blog/measuring-off-ball-movement-using-broadcast-tracking-event-data> |
+| [R22] | U10 与 U12 决策比较，PMC9693199 | 一手·学术 | <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9693199/> |
+| [R23] | 夏原等（2023），日本体育・スポーツ・健康学会，IMU 检测首振り | 会议摘要 | <https://doi.org/10.20693/jspehssconf.73.0_283> |
 
 ---
 
